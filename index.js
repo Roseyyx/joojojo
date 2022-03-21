@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 require('dotenv').config();
+
 // Routers
 const userRouter = require("./routes/UserRoute");
 const productRouter = require("./routes/ProductRoute");
@@ -23,13 +24,10 @@ app.use("/auth", userRouter)
 app.use("/product", productRouter)
 app.use("/news", newsRouter)
 
-mongoose.connect(
-    process.env.MONGO_SEC
-).then(() => {
+mongoose.connect(process.env.MONGO_SEC).then(() => {
     console.log("Database is aan het luistern pssh!");
-}
-).catch((err) => {
-    console.log(err)
+}).catch((err) => {
+    console.log(err);
 });
 
 app.get("", (req, res) => {
