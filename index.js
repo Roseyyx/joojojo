@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 require('dotenv').config();
+// Routers
+const userRouter = require("./routes/UserRoute");
 
 app.use(express.json());
 app.use(express.urlencoded());
@@ -13,6 +15,9 @@ app.use('/img', express.static(__dirname + "public/img"));
 
 app.set("views", "./views");
 app.set("view engine", "ejs");
+
+// Define Routes
+app.use("/auth", userRouter)
 
 mongoose.connect(
     process.env.MONGO_SEC
