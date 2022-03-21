@@ -1,0 +1,39 @@
+:root {
+    --white: #FFFFFF;
+    --gray: #B1A7A6;
+    --red: #BA181B;
+    --black: #000000;
+}
+
+
+body {
+    margin: 0;
+    background-color: var(--white);
+    color: var(--black)
+}
+
+#header {
+    background-color: var(--gray);
+    color: var(--white);
+    width: 100%;
+    height: 10vh;
+}
+
+#index {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#nieuws, #tickets {
+    margin: auto;
+    margin-left: 50%;
+    margin-right: 50%;
+    display: block;
+}
+
+#buttonContainer{
+    right: 0;
+    top: 0;
+    position: absolute;
+}

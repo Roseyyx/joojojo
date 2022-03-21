@@ -20,7 +20,7 @@ app.set("view engine", "ejs");
 app.use("/auth", userRouter)
 
 mongoose.connect(
-    process.env.MONGO_SEC
+    "mongodb+srv://arty:hijskraan66@cluster0.ojpmk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 ).then(() => {
     console.log("Database is aan het luistern pssh!");
 }
