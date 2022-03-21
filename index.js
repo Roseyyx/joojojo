@@ -18,6 +18,10 @@ app.get("/beroepsp4", (req, res) => {
     res.render("index");
 })
 
+app.get("/login", (req, res) => {
+    res.render("login");
+})
+
 app.listen(3000, () => {
     console.log("Backend server is aan het lopen!");
 })

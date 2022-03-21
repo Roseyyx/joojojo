@@ -1,0 +1,61 @@
+@keyframes login {
+    0%   {margin-left: 0%;}
+    100%  {margin-left: 50%;}
+}
+
+@keyframes signup {
+    0%   {margin-left: 50%;}
+    100%  {margin-left: 0%;}
+}
+
+
+.formWrapper{
+      display: flex;
+    justify-content: center;
+}
+
+.form .slide{
+    width: 10vw;
+    height: 5vh;
+    background-color: aqua;
+    display: block;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.form .slide:hover{
+    cursor: pointer;
+}
+
+.slide .blockTekst{
+    display: inline-block;
+    margin: 0;
+    left: 0;
+    position: relative;
+}
+
+.slide .slideBlock{
+    height: 5vh;
+    width: 5vw;
+    background-color: red;
+}
+
+.login, .signup{
+    width: fit-content;
+    text-align: center;
+    display: block;
+    margin-top: 6vh;
+}
+
+.form label, input{
+    display: block;
+}
+
+.form input{
+    margin-bottom: 20px;
+}
+
+.form .remember{
+    display: inline-block;
+}
