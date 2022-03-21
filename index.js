@@ -32,6 +32,11 @@ app.get("/beroepsp4", (req, res) => {
     res.render("index");
 })
 
+app.get("/dashboard", (req, res) => {
+    res.render("dashboard", {data: "gebruiker"});
+})
+
+
 app.listen(3000, () => {
     console.log("Backend server is aan het lopen!");
 })
