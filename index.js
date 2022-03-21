@@ -14,6 +14,15 @@ app.use('/img', express.static(__dirname + "public/img"));
 app.set("views", "./views");
 app.set("view engine", "ejs");
 
+mongoose.connect(
+    process.env.MONGO_SEC
+).then(() => {
+    console.log("Database is aan het luistern pssh!");
+}
+).catch((err) => {
+    console.log(err)
+});
+
 app.get("/beroepsp4", (req, res) => {
     res.render("index");
 })
