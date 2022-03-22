@@ -18,9 +18,11 @@
   },
   "homepage": "https://github.com/artyNL/joojojo#readme",
   "dependencies": {
+    "connect-mongodb-session": "^3.1.1",
     "dotenv": "^16.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.3",
+    "express-session": "^1.17.2",
     "mongoose": "^6.2.7",
     "nodemon": "^2.0.15"
   }
