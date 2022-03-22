@@ -45,10 +45,9 @@ mongoose.connect(process.env.MONGO_SEC).then(() => {
     console.log(err);
 });
 
-app.get("", (req, res) => {
-    res.render("index");
+app.get("/login", (req,res) => {
+    res.render("login");
 })
-
 const isAuth = (req, res, next) => {
     if (!req.session.isAuth)
         next();
@@ -61,6 +60,9 @@ app.get("/dashboard",  (req, res) => {
         res.render("dashboard", {data: req.session.username});
     else
         res.redirect("/");
+ )}
+app.get("", (req, res) => {
+    res.render("index");
 })
 
 app.listen(3000, () => {
