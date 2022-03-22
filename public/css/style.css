@@ -9,7 +9,7 @@
     --donkerBGAlpha: #2e3235c0;
     --lichtBG: #D3D0CB;
     --donkerder: #1e2019;
-    --pop: #587b7f
+    --pop: #587b7f;
 }
 
 *{
@@ -27,8 +27,6 @@ body{
 }
 
 nav{
-    left: 0;
-    top: 0;
     width: 100%;
     position: fixed;
     color: var(--lichtBG);
@@ -43,6 +41,11 @@ nav{
     width: 100%;
     align-items: center;
     min-height: 60px;
+    float: left;
+}
+
+.nav-btn-wrapper {
+    float: right;
 }
 
 .nav-link{
@@ -53,11 +56,11 @@ nav{
 }
 
 .nav-link:hover{
-    color: var(--pop);
+    color: var(--red);
 }
 
 .nav-wrapper button{
-    background: var(--pop);
+    background: var(--red);
     border: none;
     padding: 5px 20px;
     font-size: 16px;
@@ -76,21 +79,6 @@ nav{
     height: 10vh;
 }
 
-#index {
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-#nieuws, #tickets {
-    margin: auto;
-    margin-left: 50%;
-    margin-right: 50%;
-    display: block;
-}
-
-#buttonContainer{
-    right: 0;
-    top: 0;
-    position: absolute;
+#headerData {
+    position: relative;
 }
