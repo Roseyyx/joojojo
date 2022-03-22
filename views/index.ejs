@@ -11,10 +11,12 @@
 <body>
     <nav>
         <div class="nav-wrapper">
-            <li><a href="" class="nav-link">Home</a></li>
-            <li><a href="" class="nav-link">Nieuws</a></li>
-            <li><a href="" class="nav-link">Tickets</a></li>
-            <a href=""><button class="nav-link">Subscribe</button></a>
+            <a href="" class="nav-link homeButton">Home</a>
+            <div class="linkys">
+                <li><a href="" class="nav-link">Nieuws</a></li>
+                <li><a href="" class="nav-link">|</a></li>
+                <li><a href="" class="nav-link">Tickets</a></li>
+            </div>
             <div class="nav-btn-wrapper">
                 <a href=""><button class="nav-link">Login</button></a>
                 <a href=""><button class="nav-link">Register</button></a>
@@ -23,31 +25,37 @@
     </nav>
     
     <div id="heroImg">
-        <img src="img/headerImg.jpg" alt="action image" id="titelImg">
         <div id="titel">Zandvoort</div>
     </div>
-    
-    <img src="img/track.png" alt="track" id="track">
-    <div id="zandvoort">Zandvoort</div>
-    <div id="information">
-        <div id="firstGP">1952</div>
-        <div id="numbOfLaps">72</div>
-        <div id="length">4.259Km</div>
-        <div id="raceDistance">306587km</div>
-        <div id="record">1:11.097</div>
+    <div class="section2">
+        <div id="information">
+            <h3>Zandvoort</h3>
+            <p id="firstGP">1952</p>
+            <p id="numbOfLaps">72</p>
+            <p id="length">4.259Km</p>
+            <p id="raceDistance">306587km</p>
+            <p id="record">1:11.097</p>
+        </div>
     </div>
+    <div class="section3">
+        <div id="mainNewsDesc"></div>
+        <div id="mainNewsTitel"></div>
     
-    <img src="img/car.jpg" alt="" id="mainNewsItem">
-    <div id="mainNewsDesc"></div>
-    <div id="mainNewsTitel"></div>
-    
-    <div id="footer">
+
+    </div>
+    <div class="footer">
         <div id="links">
-    
+            <ul>
+            <li><a href="" class="footer-link">Home</a></li>
+            <li><a href="" class="footer-link">Nieuws</a></li>
+            <li><a href="" class="footer-link">Tickets</a></li>
+            <li><a href="">Login</a></li>
+            <li><a href="">Register</a></li>
+        </ul>
         </div>
         <div id="line"></div>
         <div id="contact">
-    
+
         </div>
     </div>
 </body>
