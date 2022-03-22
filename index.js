@@ -60,7 +60,8 @@ app.get("/dashboard",  (req, res) => {
         res.render("dashboard", {data: req.session.username});
     else
         res.redirect("/");
- )}
+});
+
 app.get("", (req, res) => {
     res.render("index");
 })
