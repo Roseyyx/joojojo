@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
+
+:root {
+    --white: #FFFFFF;
+    --gray: #B1A7A6;
+    --red: #BA181B;
+    --black: #000000;
+    --donkerBG: #393E41;
+    --donkerBGAlpha: #2e3235c0;
+    --lichtBG: #D3D0CB;
+    --donkerder: #1e2019;
+    --pop: #587b7f
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: "JetBrains Mono", sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    color: var(--lichtBG);
+    overflow-x: hidden;
+}
+
+nav{
+    left: 0;
+    top: 0;
+    width: 100%;
+    position: fixed;
+    color: var(--lichtBG);
+    padding: 0 1.5rem;
+    background-color: var(--donkerBG);
+    backdrop-filter: blur(20px);
+    z-index: 5;
+}
+
+.nav-wrapper{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    min-height: 60px;
+}
+
+.nav-link{
+    color: var(--lichtBG);
+    margin-right: 3em;
+    transition: all .4s ease;
+    text-decoration: none;
+}
+
+.nav-link:hover{
+    color: var(--pop);
+}
+
+.nav-wrapper button{
+    background: var(--pop);
+    border: none;
+    padding: 5px 20px;
+    font-size: 16px;
+    transition: all .4s ease;
+    cursor: pointer;
+}
+
+.nav-wrapper button:hover{
+    background: var(--lichtBG);
+}
+
+#header {
+    background-color: var(--gray);
+    color: var(--white);
+    width: 100%;
+    height: 10vh;
+}
+
+#index {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#nieuws, #tickets {
+    margin: auto;
+    margin-left: 50%;
+    margin-right: 50%;
+    display: block;
+}
+
+#buttonContainer{
+    right: 0;
+    top: 0;
+    position: absolute;
+}
