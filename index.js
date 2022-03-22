@@ -59,7 +59,7 @@ app.get("/dashboard",  (req, res) => {
     if (req.session.isAuth)
         res.render("dashboard", {data: req.session.username});
     else
-        res.redirect("/");
+        res.redirect("/login");
 });
 
 app.get("", (req, res) => {
