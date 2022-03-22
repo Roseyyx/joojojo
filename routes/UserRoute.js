@@ -6,12 +6,11 @@ const isAuth = (req, res, next) => {
     if (!req.session.isAuth)
         next();
     else 
-        res.render("/dashboard", {data : req.session.username});
+        res.redirect("/dashboard");
 }
 
 router.post("/register",isAuth, async (req,res) => {
-    const {email} = req.body.email;
-    let NewUser = await User.findOne({email});
+    let NewUser = await User.findOne({email: req.body.email});
     if (NewUser)
         res.redirect("/register");
     NewUser = new User({

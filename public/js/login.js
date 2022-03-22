@@ -19,9 +19,11 @@ document.getElementById("form").innerHTML = `
 document.getElementById("form").innerHTML += `
         <form id="login" class="login" action="/auth/login" method="post">
         <label>Naam</label>
-        <input type="text" placeholder="Naam">
+        <input type="text" name="username" placeholder="Naam">
         <label>Wachtwoord</label>
-        <input type="password" placeholder="Wachtwoord">
+        <input name="password" placeholder="Wachtwoord">
+        <input class="remember" id="remember" type="checkbox"><label class="remember" id="remember">Onthoud mij</label>
+        <button type="submit" id="submitknop">Log In</button>
         </form>
         `
 
@@ -55,10 +57,11 @@ switch(localStorage.getItem("account")){
         // de form
         document.getElementById("login").innerHTML += `
         <label>Naam</label>
-        <input type="text" type="username" placeholder="Naam">
+        <input type="text" name="username" placeholder="Naam">
         <label>Wachtwoord</label>
-        <input type="password" placeholder="Wachtwoord">
+        <input name="password" placeholder="Wachtwoord">
         <input class="remember" id="remember" type="checkbox"><label class="remember" id="remember">Onthoud mij</label>
+        <button type="submit" id="submitknop">Log In</button>
         `
         document.getElementById("login").action = '/auth/login'
         // clusterfuck voor de status van de slider
@@ -78,11 +81,12 @@ switch(localStorage.getItem("account")){
         // de form
         document.getElementById("login").innerHTML += `
         <label>Naam</label>
-        <input type="text" type="username" placeholder="Naam">
+        <input type="text" name="username" placeholder="Naam">
         <label>E-mail</label>
-        <input type="email" placeholder="E-mail">
+        <input name="email" placeholder="E-mail">
         <label>Wachtwoord</label>
         <input type="password" placeholder="Wachtwoord">
+        <button type="submit" id="submitknop">Account aanmaken</button>
         `
         // Verander de form action
         document.getElementById("login").action = '/auth/register'
