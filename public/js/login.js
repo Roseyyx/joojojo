@@ -17,11 +17,13 @@ document.getElementById("form").innerHTML = `
 `
 // Zet standaard de form voor login op de pagina
 document.getElementById("form").innerHTML += `
-        <form id="login" class="login">
+        <form id="login" class="login" action="/auth/login" method="post">
         <label>Naam</label>
-        <input type="text" placeholder="Naam">
+        <input type="text" name="username" placeholder="Naam">
         <label>Wachtwoord</label>
-        <input type="password" placeholder="Wachtwoord">
+        <input name="password" placeholder="Wachtwoord">
+        <input class="remember" id="remember" type="checkbox"><label class="remember" id="remember">Onthoud mij</label>
+        <button type="submit" id="submitknop">Log In</button>
         </form>
         `
 
@@ -55,11 +57,13 @@ switch(localStorage.getItem("account")){
         // de form
         document.getElementById("login").innerHTML += `
         <label>Naam</label>
-        <input type="text" placeholder="Naam">
+        <input type="text" name="username" placeholder="Naam">
         <label>Wachtwoord</label>
-        <input type="password" placeholder="Wachtwoord">
+        <input name="password" placeholder="Wachtwoord">
         <input class="remember" id="remember" type="checkbox"><label class="remember" id="remember">Onthoud mij</label>
+        <button type="submit" id="submitknop">Log In</button>
         `
+        document.getElementById("login").action = '/auth/login'
         // clusterfuck voor de status van de slider
         document.getElementById("slideBlock").style.animation = "right 1s"
         document.getElementById("slideBlock").style.backgroundColor = "var(--buttonActive)"
@@ -77,12 +81,16 @@ switch(localStorage.getItem("account")){
         // de form
         document.getElementById("login").innerHTML += `
         <label>Naam</label>
-        <input type="text" placeholder="Naam">
+        <input type="text" name="username" placeholder="Naam">
         <label>E-mail</label>
-        <input type="email" placeholder="E-mail">
+        <input name="email" placeholder="E-mail">
         <label>Wachtwoord</label>
         <input type="password" placeholder="Wachtwoord">
+        <button type="submit" id="submitknop">Account aanmaken</button>
         `
+        // Verander de form action
+        document.getElementById("login").action = '/auth/register'
+
         // clusterfuck voor de status van de slider
         document.getElementById("slideBlock2").style.animation = "right 1s"
         document.getElementById("slideBlock2").style.backgroundColor = "var(--buttonActive)"
