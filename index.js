@@ -3,6 +3,11 @@ const app = express();
 const mongoose = require("mongoose");
 require('dotenv').config();
 
+// Routers
+const userRouter = require("./routes/UserRoute");
+const productRouter = require("./routes/ProductRoute");
+const newsRouter = require("./routes/NewsRoute");
+
 app.use(express.json());
 app.use(express.urlencoded());
 
@@ -14,12 +19,19 @@ app.use('/img', express.static(__dirname + "public/img"));
 app.set("views", "./views");
 app.set("view engine", "ejs");
 
-app.get("/beroepsp4", (req, res) => {
-    res.render("index");
-})
+// Define Routes
+app.use("/auth", userRouter)
+app.use("/product", productRouter)
+app.use("/news", newsRouter)
 
-app.get("/login", (req, res) => {
-    res.render("login");
+mongoose.connect(process.env.MONGO_SEC).then(() => {
+    console.log("Database is aan het luistern pssh!");
+}).catch((err) => {
+    console.log(err);
+});
+
+app.get("", (req, res) => {
+    res.render("index");
 })
 
 app.listen(3000, () => {
