@@ -1,5 +1,13 @@
 localStorage.setItem("account", "login")
 
+// bagger code voor het achterhalen van de vw
+document.addEventListener("resize", size)
+let vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+function size(){
+    vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    document.addEventListener("resize", load)
+}
+
 // Zet de slider voor login/signup op de pagina
 document.getElementById("form").innerHTML = `
 <div class="slide" id="slide">
@@ -54,12 +62,16 @@ switch(localStorage.getItem("account")){
         `
         // clusterfuck voor de status van de slider
         document.getElementById("slideBlock").style.animation = "right 1s"
-        document.getElementById("slideBlock").style.marginLeft = "-5%"
         document.getElementById("slideBlock").style.backgroundColor = "var(--buttonActive)"
-        document.getElementById("slideBlock2").style.animation = "left 1s"
-        document.getElementById("slideBlock2").style.marginLeft = "0%"
         document.getElementById("slideBlock2").style.backgroundColor = "var(--buttonNope)"
-
+        document.getElementById("slideBlock2").style.animation = "left 1s"
+        if(vw > 810){
+            document.getElementById("slideBlock").style.marginLeft = "-5%"
+            document.getElementById("slideBlock2").style.marginLeft = "0%"
+        } else{
+            document.getElementById("slideBlock").style.marginLeft = "-10%"
+            document.getElementById("slideBlock2").style.marginLeft = "0%"
+        }
         break;
     case "signup":
         // de form
@@ -73,11 +85,16 @@ switch(localStorage.getItem("account")){
         `
         // clusterfuck voor de status van de slider
         document.getElementById("slideBlock2").style.animation = "right 1s"
-        document.getElementById("slideBlock2").style.marginLeft = "-5%"
         document.getElementById("slideBlock2").style.backgroundColor = "var(--buttonActive)"
         document.getElementById("slideBlock").style.animation = "left 1s"
-        document.getElementById("slideBlock").style.marginLeft = "0%"
         document.getElementById("slideBlock").style.backgroundColor = "var(--buttonNope)"
+        if(vw > 810){
+            document.getElementById("slideBlock2").style.marginLeft = "-5%"
+            document.getElementById("slideBlock").style.marginLeft = "0%"
+        } else{
+            document.getElementById("slideBlock2").style.marginLeft = "-10%"
+            document.getElementById("slideBlock").style.marginLeft = "0%"
+        }
         break;
     }
 }

@@ -33,6 +33,9 @@
     border-radius: 10px;
     overflow: hidden;
     text-align: center;
+    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .form .slide:hover{
@@ -50,6 +53,7 @@
     border-radius: 10px;
     justify-content: center;
     align-items: center;
+    font-size: 1vw;
 }
 
 .slide .slideBlock2{
@@ -61,6 +65,7 @@
     border-radius: 10px;
     justify-content: center;
     align-items: center;
+    font-size: 1vw;
 }
 
 /* opmaak voor de from */
@@ -81,4 +86,34 @@
 
 .form .remember{
     display: inline-block;
+}
+
+@media only screen and (max-width: 810px) {
+  /* de animaties voor de sliders */
+  @keyframes right{
+    0%   {margin-left: 0%;}
+    100%  {margin-left: -10%; background-color: var(--buttonActive)}
+}
+
+@keyframes left {
+    0%   {margin-left: -10%;}
+    100%  {margin-left: 0%; background-color: var(--buttonNope)}
+}
+
+.form .slide{
+    width: 20vw;
+}
+
+.slide .slideBlock{
+    height: 5vh;
+    width: 10vw;
+    font-size: 1vw;
+    margin-left: -10%;
+}
+
+.slide .slideBlock2{
+    height: 5vh;
+    width: 10vw;
+    font-size: 1vw;
+}
 }
