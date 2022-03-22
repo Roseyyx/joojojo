@@ -6,7 +6,20 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Welkom: <%= data %></h1>
-    
+    <% if (errorcode != '') { %>
+        <h1>Code: <%= errorcode %></h1>
+    <% } %> 
+    <% if (successcode != '') { %>
+        <h1><%= successcode %></h1>
+    <% } %> 
+    <form action="/product/createProduct" method="post">
+        <label>Product Naam*</label>
+        <input type="text" name="name" placeholder="Product Naam*">
+        <label>Product Prijs*</label>
+        <input name="prijs" placeholder="Product Prijs*">
+        <label>Product Aantal</label>
+        <input name="aantal" placeholder="Product Aantal">
+        <button type="submit">Maak Product</button>
+    </form>
 </body>
 </html>
