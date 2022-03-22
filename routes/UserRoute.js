@@ -26,6 +26,7 @@ router.post("/login", async (req, res) => {
         }
         const { email, ...others} = user._doc;
         req.flash("success_code", `Ingelogd als: ${user.username}`);
+        req.session.isAuth = true;
         res.redirect("/dashboard")
     } catch (error) {
 

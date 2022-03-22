@@ -7,6 +7,7 @@ const MongoDBSession = require("connect-mongodb-session")(session);
 const flash = require("connect-flash")
 
 // Routers
+const mainRouter = require("./routes/MainRoutes");
 const userRouter = require("./routes/UserRoute");
 const productRouter = require("./routes/ProductRoute");
 const newsRouter = require("./routes/NewsRoute");
@@ -43,6 +44,7 @@ app.use((req,res,next) => {
 })
 
 // Define Routes
+app.use("", mainRouter)
 app.use("/auth", userRouter)
 app.use("/product", productRouter)
 app.use("/news", newsRouter)
@@ -53,21 +55,6 @@ mongoose.connect(process.env.MONGO_SEC).then(() => {
     console.log(err);
 });
 
-app.get("/login", (req,res) => {
-    if (req.session.isAuth){
-        res.redirect("/dashboard")
-    } else {
-        res.render("login", {errorcode: req.session.errorcode, successcode: req.session.successcode});
-    }
-})
-
-app.get("/dashboard",  (req, res) => {
-    if (!req.session.isAuth){
-        res.render("dashboard", {errorcode: req.session.errorcode, successcode: req.session.successcode});
-    }
-    else
-        res.redirect("/login");
-});
 
 app.get("", (req, res) => {
     res.render("index");

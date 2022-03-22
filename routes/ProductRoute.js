@@ -1,5 +1,4 @@
 const Product = require("../modules/Product");
-const flash = require("connect-flash")
 
 const router = require("express").Router();
 
