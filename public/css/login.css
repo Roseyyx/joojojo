@@ -1,8 +1,13 @@
+/* de kleuren en fonts */
 :root {
     --buttonActive: hsl(120, 100%, 25%);
     --buttonNope: hsla(120, 56%, 49%, 0);
+    font-family: 'Poppins', sans-serif;
   }
+/* font import */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
+  /* de animaties voor de sliders */
 @keyframes right{
     0%   {margin-left: 0%;}
     100%  {margin-left: -5%; background-color: var(--buttonActive)}
@@ -13,12 +18,13 @@
     100%  {margin-left: 0%; background-color: var(--buttonNope)}
 }
 
-
+/* wrapper om de form en slider in het midden te krijgen */
 .formWrapper{
     display: flex;
     justify-content: center;
 }
 
+/* achtergrond van de slider */
 .form .slide{
     width: 10vw;
     height: 5vh;
@@ -33,14 +39,7 @@
     cursor: pointer;
 }
 
-.slide .blockTekst{
-    display: inline-block;
-    margin: 0;
-    left: 0;
-    position: relative;
-    z-index: 99;
-}
-
+/* de blokken met tekst in de slider */
 .slide .slideBlock{
     height: 5vh;
     width: 5vw;
@@ -49,6 +48,8 @@
     margin-left: -5%;
     background-color: green;
     border-radius: 10px;
+    justify-content: center;
+    align-items: center;
 }
 
 .slide .slideBlock2{
@@ -58,9 +59,12 @@
     display: inline-flex;
     margin-left: 0%;
     border-radius: 10px;
+    justify-content: center;
+    align-items: center;
 }
 
-.login, .signup{
+/* opmaak voor de from */
+.login{
     width: fit-content;
     text-align: center;
     display: block;

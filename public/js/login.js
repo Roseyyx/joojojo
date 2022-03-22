@@ -1,12 +1,13 @@
 localStorage.setItem("account", "login")
 
+// Zet de slider voor login/signup op de pagina
 document.getElementById("form").innerHTML = `
 <div class="slide" id="slide">
 <div class="slideBlock" id="slideBlock">Log In</div>
 <div class="slideBlock2" id="slideBlock2">signUp</div>
 </div>
 `
-
+// Zet standaard de form voor login op de pagina
 document.getElementById("form").innerHTML += `
         <form id="login" class="login">
         <label>Naam</label>
@@ -16,6 +17,7 @@ document.getElementById("form").innerHTML += `
         </form>
         `
 
+// functie voor het wisselen van login/signup
 function wissel(){
 console.log("lgtm")
     switch(localStorage.getItem("account")){
@@ -30,17 +32,19 @@ console.log("lgtm")
     }
 }
 
+// funtie voor de juiste form op de pagina zetten
 function load(){
     try{
+        // maakt de from leeg
     document.getElementById("login").innerHTML = ""
     console.log(localStorage.getItem("account"))
     }catch(err){
 
     }
-
+// zet de nieuwe form op de pagina
 switch(localStorage.getItem("account")){
     case "login":
-        console.log("login")
+        // de form
         document.getElementById("login").innerHTML += `
         <label>Naam</label>
         <input type="text" placeholder="Naam">
@@ -48,6 +52,7 @@ switch(localStorage.getItem("account")){
         <input type="password" placeholder="Wachtwoord">
         <input class="remember" id="remember" type="checkbox"><label class="remember" id="remember">Onthoud mij</label>
         `
+        // clusterfuck voor de status van de slider
         document.getElementById("slideBlock").style.animation = "right 1s"
         document.getElementById("slideBlock").style.marginLeft = "-5%"
         document.getElementById("slideBlock").style.backgroundColor = "var(--buttonActive)"
@@ -57,7 +62,7 @@ switch(localStorage.getItem("account")){
 
         break;
     case "signup":
-        console.log("signup")
+        // de form
         document.getElementById("login").innerHTML += `
         <label>Naam</label>
         <input type="text" placeholder="Naam">
@@ -66,6 +71,7 @@ switch(localStorage.getItem("account")){
         <label>Wachtwoord</label>
         <input type="password" placeholder="Wachtwoord">
         `
+        // clusterfuck voor de status van de slider
         document.getElementById("slideBlock2").style.animation = "right 1s"
         document.getElementById("slideBlock2").style.marginLeft = "-5%"
         document.getElementById("slideBlock2").style.backgroundColor = "var(--buttonActive)"
@@ -73,8 +79,8 @@ switch(localStorage.getItem("account")){
         document.getElementById("slideBlock").style.marginLeft = "0%"
         document.getElementById("slideBlock").style.backgroundColor = "var(--buttonNope)"
         break;
+    }
 }
-    document.getElementById("slide").addEventListener("click", wissel)
-}
+// listener event voor de slider
 document.getElementById("slide").addEventListener("click", wissel)
 
