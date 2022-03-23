@@ -3,14 +3,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+    <script defer src="js/alerts.js"></script>
+
     <title>Document</title>
 </head>
 <body>
     <% if (errorcode != '') { %>
-        <h1>Code: <%= errorcode %></h1>
+        <div class="alert error">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <p><i class="fas fa-minus-circle"></i> <%= errorcode %></p>
+        </div>
     <% } %> 
     <% if (successcode != '') { %>
-        <h1><%= successcode %></h1>
+        <div class="alert success">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <p><i class="fas fa-check"></i> <%= successcode %></p>
+        </div>
     <% } %> 
     <form action="/product/createProduct" method="post">
         <label>Product Naam*</label>

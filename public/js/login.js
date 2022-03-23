@@ -22,7 +22,7 @@ document.getElementById("form").innerHTML += `
         <input type="text" name="username" placeholder="Naam">
         <label>Wachtwoord</label>
         <input name="password" placeholder="Wachtwoord">
-        <input class="remember" id="remember" type="checkbox"><label class="remember" id="remember">Onthoud mij</label>
+        <input class="remember" id="remember" type="checkbox" name="remember" checked><label class="remember" id="remember" >Onthoud mij</label>
         <button type="submit" id="submitknop">Log In</button>
         </form>
         `
@@ -60,7 +60,7 @@ switch(localStorage.getItem("account")){
         <input type="text" name="username" placeholder="Naam">
         <label>Wachtwoord</label>
         <input name="password" placeholder="Wachtwoord">
-        <input class="remember" id="remember" type="checkbox"><label class="remember" id="remember">Onthoud mij</label>
+        <input class="remember" id="remember" type="checkbox" name="remember" checked><label class="remember" id="remember" >Onthoud mij</label>
         <button type="submit" id="submitknop">Log In</button>
         `
         document.getElementById("login").action = '/auth/login'
