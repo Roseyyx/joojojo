@@ -4,14 +4,16 @@ const mongoose = require("mongoose");
 require('dotenv').config();
 const session = require("express-session");
 const MongoDBSession = require("connect-mongodb-session")(session);
+const flash = require("connect-flash")
 
 // Routers
+const mainRouter = require("./routes/MainRoutes");
 const userRouter = require("./routes/UserRoute");
 const productRouter = require("./routes/ProductRoute");
 const newsRouter = require("./routes/NewsRoute");
 
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.urlencoded({extended: false}));
 
 app.use(express.static("public"));
 app.use('/css', express.static(__dirname + "public/css"));
@@ -31,10 +33,17 @@ app.use(session({
     secret: process.env.COOKIE_SEC,
     resave: false,
     saveUninitialized: false,
-    store: store
 }));
+app.use(flash());
+
+app.use((req,res,next) => {
+    req.session.errorcode = req.flash("error_code");
+    req.session.successcode = req.flash("success_code");
+    next();
+})
 
 // Define Routes
+app.use("", mainRouter)
 app.use("/auth", userRouter)
 app.use("/product", productRouter)
 app.use("/news", newsRouter)
@@ -45,22 +54,6 @@ mongoose.connect(process.env.MONGO_SEC).then(() => {
     console.log(err);
 });
 
-app.get("/login", (req,res) => {
-    res.render("login");
-})
-const isAuth = (req, res, next) => {
-    if (!req.session.isAuth)
-        next();
-    else 
-        res.render("/dashboard", {data : req.session.username});
-}
-
-app.get("/dashboard",  (req, res) => {
-    if (req.session.isAuth)
-        res.render("dashboard", {data: req.session.username});
-    else
-        res.redirect("/");
-});
 
 app.get("", (req, res) => {
     res.render("index");

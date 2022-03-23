@@ -15,6 +15,18 @@
     <title>Login - GP-Zandvoort</title>
 </head>
 <body>
+    <% if (errorcode != '') { %>
+        <div class="alert error">
+            <p>X <%= errorcode %></p>
+        </div>
+    <% } %> 
+    <% if (successcode != '') { %>
+        <div class="alert success">
+            <p>V <%= successcode %></p>
+        </div>
+    <% } %> 
+    
+
     <div class="formWrapper">
     <div class="form" id="form">
         Er is iets mis gegaan! Zet javascript aan.

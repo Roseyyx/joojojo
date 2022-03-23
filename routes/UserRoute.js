@@ -1,15 +1,7 @@
 const User = require("../modules/User");
-
 const router = require("express").Router();
 
-const isAuth = (req, res, next) => {
-    if (!req.session.isAuth)
-        next();
-    else 
-        res.redirect("/dashboard");
-}
-
-router.post("/register",isAuth, async (req,res) => {
+router.post("/register", async (req,res) => {
     let NewUser = await User.findOne({email: req.body.email});
     if (NewUser)
         res.redirect("/register");
@@ -25,16 +17,19 @@ router.post("/register",isAuth, async (req,res) => {
     }
 })
 
-router.post("/login", isAuth, async (req, res) => {
+router.post("/login", async (req, res) => {
     try {
         const user = await User.findOne({username: req.body.username});
-        !user && res.status(401).json("Wrong username or password!");
+        if (!user){
+            req.flash("error_code", "Verkeerd wachtwoord of gebruikersnaam");
+            res.redirect("/login")
+        }
         const { email, ...others} = user._doc;
+        req.flash("success_code", `Ingelogd als: ${user.username}`);
         req.session.isAuth = true;
-        req.session.username = user.username;
-        res.render("dashboard", {data : user.username});
+        res.redirect("/dashboard")
     } catch (error) {
-        res.status(500).json(error);
+
     }
 })
 
