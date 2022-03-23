@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+    <script defer src="js/alerts.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <% if (errorcode != '') { %>
+        <div class="alert error">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <p><i class="fas fa-minus-circle"></i> <%= errorcode %></p>
+        </div>
+    <% } %> 
+    <% if (successcode != '') { %>
+        <div class="alert success">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <p><i class="fas fa-check"></i> <%= successcode %></p>
+        </div>
+    <% } %> 
+
+    <div class="items">
+        <% for (let i = 0; i < newsitems.length;  i++) { %>
+            <%# News Titel %> 
+           <h1><%= newsitems[i].newsTitel %> </h1> 
+            <%# News Afbeelding Path %> 
+           <img src="<%=newsitems[i].newsAfbeelding%>"></img> 
+            <%# News Inhoud %> 
+           <p><%= newsitems[i].newsInhoud %> </p> 
+        <% } %>
+        <% for (let i = 0; i < winkel.length;  i++) { %>
+            <% if (winkel[i].productAantal == null) { %>
+                <p><%= winkel[i].productNaam%> | In stock: <i class="fas fa-infinity"></i></p>
+            <% } %>
+        <% } %>
+    </div>
+
+</body>
+</html>

@@ -15,6 +15,7 @@ document.getElementById("form").innerHTML = `
 <div class="slideBlock2" id="slideBlock2">signUp</div>
 </div>
 `
+
 // Zet standaard de form voor login op de pagina
 document.getElementById("form").innerHTML += `
         <form id="login" class="login" action="/auth/login" method="post">
@@ -22,7 +23,7 @@ document.getElementById("form").innerHTML += `
         <input type="text" name="username" placeholder="Naam">
         <label>Wachtwoord</label>
         <input name="password" placeholder="Wachtwoord">
-        <input class="remember" id="remember" type="checkbox"><label class="remember" id="remember">Onthoud mij</label>
+        <input class="remember" id="remember" type="checkbox" name="remember" checked><label class="remember" id="remember" >Onthoud mij</label>
         <button type="submit" id="submitknop">Log In</button>
         </form>
         `
@@ -60,7 +61,7 @@ switch(localStorage.getItem("account")){
         <input type="text" name="username" placeholder="Naam">
         <label>Wachtwoord</label>
         <input name="password" placeholder="Wachtwoord">
-        <input class="remember" id="remember" type="checkbox"><label class="remember" id="remember">Onthoud mij</label>
+        <input class="remember" id="remember" type="checkbox" name="remember" checked><label class="remember" id="remember" >Onthoud mij</label>
         <button type="submit" id="submitknop">Log In</button>
         `
         document.getElementById("login").action = '/auth/login'
