@@ -146,18 +146,21 @@ nav{
 .alert {
     position: absolute;
     right: 0;
-    padding: 10px 40px;
-    border: solid 1px blue;
+    padding: 10px 30px;
+    background: #ffb3b3;
+}
+
+.alert:not(:first-child){
+    margin-top: 45px;
 }
 
 
 /*Error Alert*/
 .error {
-    color: red;
+    color: black;
 }
 
 /*Success Alert*/
-
 .success {
     color: green;
 }

@@ -8,6 +8,7 @@
 <!-- style -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 <!-- einde style -->
 <!-- javascript -->
     <script defer src="js/login.js"></script>
@@ -15,9 +16,12 @@
     <title>Login - GP-Zandvoort</title>
 </head>
 <body>
+    <div class="alert error">
+        <p>X error code placeholder</p>
+    </div>
     <% if (errorcode != '') { %>
         <div class="alert error">
-            <p>X <%= errorcode %></p>
+            <p><i class="fas fa-minus-circle"></i> <%= errorcode %></p>
         </div>
     <% } %> 
     <% if (successcode != '') { %>

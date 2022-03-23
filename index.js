@@ -1,7 +1,8 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-require('dotenv').config();
+const dotenv = require('dotenv');
+dotenv.config({ path: './.env' });
 const session = require("express-session");
 const MongoDBSession = require("connect-mongodb-session")(session);
 const flash = require("connect-flash")
@@ -11,6 +12,7 @@ const mainRouter = require("./routes/MainRoutes");
 const userRouter = require("./routes/UserRoute");
 const productRouter = require("./routes/ProductRoute");
 const newsRouter = require("./routes/NewsRoute");
+const Validetor = require("./Helpers/Validator");
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
@@ -47,6 +49,7 @@ app.use("", mainRouter)
 app.use("/auth", userRouter)
 app.use("/product", productRouter)
 app.use("/news", newsRouter)
+app.use("/validate", Validetor)
 
 mongoose.connect(process.env.MONGO_SEC).then(() => {
     console.log("Database is aan het luistern pssh!");
@@ -54,10 +57,6 @@ mongoose.connect(process.env.MONGO_SEC).then(() => {
     console.log(err);
 });
 
-
-app.get("", (req, res) => {
-    res.render("index");
-})
 
 app.listen(3000, () => {
     console.log("Backend server is aan het lopen!");
