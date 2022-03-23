@@ -30,9 +30,14 @@
             <%# News Titel %> 
            <h1><%= newsitems[i].newsTitel %> </h1> 
             <%# News Afbeelding Path %> 
-           <img src="<%=newsitems[i].newsAfbeelding%>"></img> \
+           <img src="<%=newsitems[i].newsAfbeelding%>"></img> 
             <%# News Inhoud %> 
            <p><%= newsitems[i].newsInhoud %> </p> 
+        <% } %>
+        <% for (let i = 0; i < winkel.length;  i++) { %>
+            <% if (winkel[i].productAantal == null) { %>
+                <p><%= winkel[i].productNaam%> | In stock: <i class="fas fa-infinity"></i></p>
+            <% } %>
         <% } %>
     </div>
 

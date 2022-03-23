@@ -15,6 +15,7 @@ document.getElementById("form").innerHTML = `
 <div class="slideBlock2" id="slideBlock2">signUp</div>
 </div>
 `
+
 // Zet standaard de form voor login op de pagina
 document.getElementById("form").innerHTML += `
         <form id="login" class="login" action="/auth/login" method="post">

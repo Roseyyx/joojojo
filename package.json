@@ -27,5 +27,8 @@
     "express-session": "^1.17.2",
     "mongoose": "^6.2.7",
     "nodemon": "^2.0.15"
+  },
+  "devDependencies": {
+    "eslint-config-google": "^0.14.0"
   }
 }
