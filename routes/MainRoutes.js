@@ -1,3 +1,4 @@
+const News = require("../modules/News");
 const Product = require("../modules/Product");
 
 const router = require("express").Router();
@@ -17,6 +18,11 @@ router.get("/dashboard",  (req, res) => {
     else
         res.redirect("/login");
 });
+
+router.get("/news", async (req, res) => {
+    let items = await News.find({});
+    res.render("news", {errorcode: req.session.errorcode, successcode: req.session.successcode, newsitems: items});
+})
 
 router.get("", (req, res) => {
     res.render("index");
