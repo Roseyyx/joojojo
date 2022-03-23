@@ -16,11 +16,16 @@
 </head>
 <body>
     <% if (errorcode != '') { %>
-        <h1>Code: <%= errorcode %></h1>
+        <div class="alert error">
+            <p>X <%= errorcode %></p>
+        </div>
     <% } %> 
     <% if (successcode != '') { %>
-        <h1>Code: <%= successcode %></h1>
+        <div class="alert success">
+            <p>V <%= successcode %></p>
+        </div>
     <% } %> 
+    
 
     <div class="formWrapper">
     <div class="form" id="form">

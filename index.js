@@ -33,7 +33,6 @@ app.use(session({
     secret: process.env.COOKIE_SEC,
     resave: false,
     saveUninitialized: false,
-    store: store
 }));
 app.use(flash());
 

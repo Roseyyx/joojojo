@@ -94,3 +94,23 @@ nav{
     top: 0;
     position: absolute;
 }
+
+/*Alerts*/
+.alert {
+    position: absolute;
+    right: 0;
+    padding: 10px 40px;
+    border: solid 1px blue;
+}
+
+
+/*Error Alert*/
+.error {
+    color: red;
+}
+
+/*Success Alert*/
+
+.success {
+    color: green;
+}
