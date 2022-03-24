@@ -135,6 +135,52 @@ nav{
     margin-right: 10vw;
 }
 
+
+#buttonContainer{
+    right: 0;
+    top: 0;
+    position: absolute;
+}
+
+/*Alerts*/
+.alert {
+    position: absolute;
+    right: 0;
+    padding: 10px 45px;
+    color: black;
+    opacity: 1;
+    transition: opacity 0.6s;
+}
+
+.alert p{
+    float: left;
+}
+
+.alert .closebtn{
+    margin-left: 15px;
+    color: black;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.alert:not(:first-child){
+    margin-top: 40px;
+}
+
+
+/*Error Alert*/
+.error {
+    background: #ffb3b3;
+}
+
+/*Success Alert*/
+.success {
+    background: #d6f5d6;
+}
+
 .section3{
     position: relative;
     top: 60px;

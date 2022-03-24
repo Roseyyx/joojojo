@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon index.js",
+    "dev": "npx tsc && nodemon dest/app.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,9 @@
   },
   "homepage": "https://github.com/artyNL/joojojo#readme",
   "dependencies": {
+    "connect-flash": "^0.1.1",
     "connect-mongodb-session": "^3.1.1",
+    "cookie-parser": "^1.4.6",
     "dotenv": "^16.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.3",
