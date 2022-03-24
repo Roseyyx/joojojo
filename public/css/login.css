@@ -94,6 +94,11 @@ body{
     display: inline-block;
 }
 
+/* footer moet hier op absolute staan anders werkt het niet */
+footer{
+    position: absolute;
+}
+
 @media only screen and (max-width: 810px) {
   /* de animaties voor de sliders */
   @keyframes right{
@@ -122,5 +127,7 @@ body{
     width: 10vw;
     font-size: 1vw;
 }
+
+
 
 }

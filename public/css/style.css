@@ -225,7 +225,7 @@ footer{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
-    position: absolute;
+    /* position: absolute; */
 }
 
 /* de linkjes links in def footer */
@@ -268,3 +268,26 @@ footer #line{
 }
 
 /* einde footer */
+
+@media only screen and (max-width: 810px) {
+
+nav .nav-link{
+    margin-right: 0;
+}
+
+#heroImg #titel{
+    font-size: 2em;
+}
+
+.section2{
+   background-position: -13vw;
+}
+
+.section2 #information{
+    margin-top: 3vh;
+    margin-right: 5vw;
+    text-align: right;
+}
+
+
+}
