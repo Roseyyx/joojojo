@@ -1,9 +1,9 @@
 document.getElementById("footer").innerHTML = `
 <ul id="links">
-                <li><a href="" class="footer-link footerKnop">Home</a></li>
+                <li><a href="/" class="footer-link footerKnop">Home</a></li>
                 <li><a href="" class="footer-link footerKnop">Nieuws</a></li>
                 <li><a href="" class="footer-link footerKnop">Tickets</a></li>
-                <li><a href="" class="footer-login footerKnop">Login</a></li>
+                <li><a href="/login" class="footer-login footerKnop">Login</a></li>
                 <li><a href="" class="footer-register footerKnop">Register</a></li>
             </ul>
         <div id="line"></div>

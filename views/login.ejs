@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <script defer src="js/footer.js"></script>
+    <script defer src="js/nav.js"></script>
 <!-- einde style -->
 <!-- javascript -->
     <script defer src="js/login.js"></script>
@@ -17,6 +19,9 @@
     <title>Login - GP-Zandvoort</title>
 </head>
 <body>
+    <nav id="nav">
+        <!-- content staat in nav.js -->
+    </nav>
     <% if (errorcode != '') { %>
         <div class="alert error">
             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
@@ -36,5 +41,8 @@
         Er is iets mis gegaan! Zet javascript aan.
     </div>
     </div>
+    <footer id="footer">
+        <!-- content staat in footer.js -->
+    </footer>
 </body>
 </html>
