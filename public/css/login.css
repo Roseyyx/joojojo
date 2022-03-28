@@ -1,0 +1,133 @@
+/* de kleuren en fonts */
+:root {
+    --buttonActive: hsl(120, 100%, 25%);
+    --buttonNope: hsla(120, 56%, 49%, 0);
+    font-family: 'Poppins', sans-serif;
+  }
+/* font import */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+  /* de animaties voor de sliders */
+@keyframes right{
+    0%   {margin-left: 0%;}
+    100%  {margin-left: -5%; background-color: var(--red)}
+}
+
+@keyframes left {
+    0%   {margin-left: -5%;}
+    100%  {margin-left: 0%; background-color: var(--buttonNope)}
+}
+
+body{
+    display: flex;
+    justify-content: center;
+}
+
+/* wrapper om de form en slider in het midden te krijgen */
+.formWrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 15vh;
+}
+
+/* achtergrond van de slider */
+.form .slide{
+    width: 10vw;
+    height: 5vh;
+    background-color: var(--donkerBG);
+    display: block;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form .slide:hover{
+    cursor: pointer;
+}
+
+/* de blokken met tekst in de slider */
+.slide .slideBlock{
+    height: 5vh;
+    width: 5vw;
+    position: absolute;
+    display: inline-flex;
+    margin-left: -5%;
+    background-color: var(--red);
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1vw;
+}
+
+.slide .slideBlock2{
+    height: 5vh;
+    width: 5vw;
+    position: absolute;
+    display: inline-flex;
+    margin-left: 0%;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1vw;
+}
+
+/* opmaak voor de from */
+.login{
+    width: fit-content;
+    text-align: center;
+    display: block;
+    margin: 6vh auto 0 auto;
+}
+
+.form label, input{
+    display: block;
+}
+
+.form input{
+    margin-bottom: 20px;
+}
+
+.form .remember{
+    display: inline-block;
+}
+
+/* footer moet hier op absolute staan anders werkt het niet */
+footer{
+    position: absolute;
+}
+
+@media only screen and (max-width: 810px) {
+  /* de animaties voor de sliders */
+  @keyframes right{
+    0%   {margin-left: 0%;}
+    100%  {margin-left: -10%; background-color: var(--red)}
+}
+
+@keyframes left {
+    0%   {margin-left: -10%;}
+    100%  {margin-left: 0%; background-color: var(--buttonNope)}
+}
+
+.form .slide{
+    width: 20vw;
+}
+
+.slide .slideBlock{
+    height: 5vh;
+    width: 10vw;
+    font-size: 1vw;
+    margin-left: -10%;
+}
+
+.slide .slideBlock2{
+    height: 5vh;
+    width: 10vw;
+    font-size: 1vw;
+}
+
+
+
+}
