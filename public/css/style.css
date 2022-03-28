@@ -121,6 +121,7 @@ nav{
     display: inline-block;
     padding: 20px;
     border-radius: 0 0 10px 0;
+    background-color: #000000;
 }
 
 /* De tweede afbeelding op de index */
@@ -128,12 +129,12 @@ nav{
     position: relative;
     top: 60px;
     height: 60vh;
-    background-image: url("/img/track.png");
+    background-image: url("/img/track.png"), linear-gradient(to left, var(--black), var(--white));
     background-position: left;
     background-size: contain;
     background-repeat: no-repeat;
-    background-color: var(--pop);
-    color: var(--black);
+    background-color: var(--black);
+    color: var(--white);
 }
 
 .section2 #information{
@@ -142,6 +143,8 @@ nav{
     display: block;
     float: right;
     margin-right: 10vw;
+    font-size: 3vh;
+    color: var(--red);
 }
 
 
@@ -160,6 +163,7 @@ nav{
     opacity: 1;
     transition: opacity 0.6s;
 }
+
 
 .alert p{
     float: left;
@@ -186,6 +190,7 @@ nav{
     z-index: 100;
 }
 
+
 /*Success Alert*/
 .success {
     background: #d6f5d6;
@@ -196,11 +201,10 @@ nav{
     position: relative;
     top: 60px;
     height: 60vh;
-    background-image: url("/img/car.jpg");
+    background-image: url("/img/autotje.png"), linear-gradient(to right, var(--pop), var(--white));
     background-position: right;
     background-size: contain;
     background-repeat: no-repeat;
-    background-color: var(--gray);
     color: var(--black);
 }
 
@@ -208,12 +212,15 @@ nav{
     top: 1vh;
     left: 5vw;
     position: relative;
+    max-width: 50%;
+    color: white;
 }
 
 .section3 #mainNewsTitel{
     top: 2vh;
     left: 6vw;
     position: relative;
+    color: white;
 }
 
 /* de footer */
@@ -245,11 +252,11 @@ footer #rechts{
 }
 
 footer a:hover{
-    color: var(--white);
+    color: var(--red);
 }
 
 footer a{
-    color: var(--black);
+    color: var(--white);
     text-decoration: none;
 }
 
@@ -288,6 +295,19 @@ nav .nav-link{
     margin-top: 3vh;
     margin-right: 5vw;
     text-align: right;
+    font-size: 2.5vw;
+}
+
+.section3 #mainNewsDesc{
+    max-width: 75%;
+    overflow: hidden;
+    color: var(--red);
+    font-size: 1.5vw;
+}
+
+.section3 #mainNewsTitel{
+    color: var(--red);
+    font-size: 1.5vw;
 }
 
 
