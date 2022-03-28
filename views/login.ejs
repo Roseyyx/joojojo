@@ -12,21 +12,21 @@
 <!-- einde style -->
 <!-- javascript -->
     <script defer src="js/login.js"></script>
+    <script defer src="js/alerts.js"></script>
 <!-- einde javascript -->
     <title>Login - GP-Zandvoort</title>
 </head>
 <body>
-    <div class="alert error">
-        <p>X error code placeholder</p>
-    </div>
     <% if (errorcode != '') { %>
         <div class="alert error">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
             <p><i class="fas fa-minus-circle"></i> <%= errorcode %></p>
         </div>
     <% } %> 
     <% if (successcode != '') { %>
         <div class="alert success">
-            <p>V <%= successcode %></p>
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <p><i class="fas fa-check"></i> <%= successcode %></p>
         </div>
     <% } %> 
     
