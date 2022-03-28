@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/news.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 
     <script defer src="js/alerts.js"></script>
+    <script defer src="js/footer.js"></script>
+    <script defer src="js/nav.js"></script>
 
     <title>Document</title>
 </head>
@@ -25,21 +28,29 @@
         </div>
     <% } %> 
 
-    <div class="items">
-        <% for (let i = 0; i < newsitems.length;  i++) { %>
-            <%# News Titel %> 
-           <h1><%= newsitems[i].newsTitel %> </h1> 
-            <%# News Afbeelding Path %> 
-           <img src="<%=newsitems[i].newsAfbeelding%>"></img> 
-            <%# News Inhoud %> 
-           <p><%= newsitems[i].newsInhoud %> </p> 
-        <% } %>
-        <% for (let i = 0; i < winkel.length;  i++) { %>
-            <% if (winkel[i].productAantal == null) { %>
-                <p><%= winkel[i].productNaam%> | In stock: <i class="fas fa-infinity"></i></p>
-            <% } %>
-        <% } %>
-    </div>
+    <nav id="nav">
+    </nav>
+
+    <section class="main">
+        <div class="articles">
+            <h1>News Titel</h1>
+            <img src="img/car.jpg" alt="">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus iusto quos quas dolores temporibus facilis odit unde accusamus dolorem velit vitae, ratione voluptate. Rerum quos laudantium illum repellat repudiandae explicabo atque rem, a molestiae nesciunt, est beatae laborum tenetur. Deserunt ut soluta voluptatem!</p>
+            <a href=""><button>Lees Meer</button></a>
+        </div>
+        <div class="articles">
+            <h1>News Titel</h1>
+            <img src="img/car.jpg" alt="">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus iusto quos quas dolores temporibus facilis odit unde accusamus dolorem velit vitae, ratione voluptate. Rerum quos laudantium illum repellat repudiandae explicabo atque rem, a molestiae nesciunt, est beatae laborum tenetur. Deserunt ut soluta voluptatem!</p>
+            <a href=""><button>Lees Meer</button></a>
+        </div>
+        <div class="articles">
+            <h1>News Titel</h1>
+            <img src="img/car.jpg" alt="">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus iusto quos quas dolores temporibus facilis odit unde accusamus dolorem velit vitae, ratione voluptate. Rerum quos laudantium illum repellat repudiandae explicabo atque rem, a molestiae nesciunt, est beatae laborum tenetur. Deserunt ut soluta voluptatem!</p>
+            <a href=""><button>Lees Meer</button></a>
+        </div>
+    </section>
 
 </body>
 </html>
