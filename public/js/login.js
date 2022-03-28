@@ -1,11 +1,11 @@
 localStorage.setItem("account", "login")
 
 // bagger code voor het achterhalen van de vw
-document.addEventListener("resize", size)
+window.addEventListener("resize", size)
 let vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 function size(){
     vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    document.addEventListener("resize", load)
+    window.addEventListener("resize", load)
 }
 
 // Zet de slider voor login/signup op de pagina
@@ -22,7 +22,7 @@ document.getElementById("form").innerHTML += `
         <label>Naam</label>
         <input type="text" name="username" placeholder="Naam">
         <label>Wachtwoord</label>
-        <input name="password" placeholder="Wachtwoord">
+        <input name="password" type="password" placeholder="Wachtwoord">
         <input class="remember" id="remember" type="checkbox" name="remember" checked><label class="remember" id="remember" >Onthoud mij</label>
         <button type="submit" id="submitknop">Log In</button>
         </form>
@@ -30,7 +30,6 @@ document.getElementById("form").innerHTML += `
 
 // functie voor het wisselen van login/signup
 function wissel(){
-console.log("lgtm")
     switch(localStorage.getItem("account")){
         case "login":
             localStorage.setItem("account", "signup")
@@ -48,7 +47,6 @@ function load(){
     try{
         // maakt de from leeg
     document.getElementById("login").innerHTML = ""
-    console.log(localStorage.getItem("account"))
     }catch(err){
 
     }
@@ -67,7 +65,7 @@ switch(localStorage.getItem("account")){
         document.getElementById("login").action = '/auth/login'
         // clusterfuck voor de status van de slider
         document.getElementById("slideBlock").style.animation = "right 1s"
-        document.getElementById("slideBlock").style.backgroundColor = "var(--buttonActive)"
+        document.getElementById("slideBlock").style.backgroundColor = "var(--red)"
         document.getElementById("slideBlock2").style.backgroundColor = "var(--buttonNope)"
         document.getElementById("slideBlock2").style.animation = "left 1s"
         if(vw > 810){
@@ -94,7 +92,7 @@ switch(localStorage.getItem("account")){
 
         // clusterfuck voor de status van de slider
         document.getElementById("slideBlock2").style.animation = "right 1s"
-        document.getElementById("slideBlock2").style.backgroundColor = "var(--buttonActive)"
+        document.getElementById("slideBlock2").style.backgroundColor = "var(--red)"
         document.getElementById("slideBlock").style.animation = "left 1s"
         document.getElementById("slideBlock").style.backgroundColor = "var(--buttonNope)"
         if(vw > 810){

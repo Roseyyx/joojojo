@@ -10,7 +10,7 @@
   /* de animaties voor de sliders */
 @keyframes right{
     0%   {margin-left: 0%;}
-    100%  {margin-left: -5%; background-color: var(--buttonActive)}
+    100%  {margin-left: -5%; background-color: var(--red)}
 }
 
 @keyframes left {
@@ -18,17 +18,23 @@
     100%  {margin-left: 0%; background-color: var(--buttonNope)}
 }
 
+body{
+    display: flex;
+    justify-content: center;
+}
+
 /* wrapper om de form en slider in het midden te krijgen */
 .formWrapper{
     display: flex;
     justify-content: center;
+    margin-top: 15vh;
 }
 
 /* achtergrond van de slider */
 .form .slide{
     width: 10vw;
     height: 5vh;
-    background-color: wheat;
+    background-color: var(--donkerBG);
     display: block;
     border-radius: 10px;
     overflow: hidden;
@@ -49,7 +55,7 @@
     position: absolute;
     display: inline-flex;
     margin-left: -5%;
-    background-color: green;
+    background-color: var(--red);
     border-radius: 10px;
     justify-content: center;
     align-items: center;
@@ -73,7 +79,7 @@
     width: fit-content;
     text-align: center;
     display: block;
-    margin-top: 6vh;
+    margin: 6vh auto 0 auto;
 }
 
 .form label, input{
@@ -88,11 +94,16 @@
     display: inline-block;
 }
 
+/* footer moet hier op absolute staan anders werkt het niet */
+footer{
+    position: absolute;
+}
+
 @media only screen and (max-width: 810px) {
   /* de animaties voor de sliders */
   @keyframes right{
     0%   {margin-left: 0%;}
-    100%  {margin-left: -10%; background-color: var(--buttonActive)}
+    100%  {margin-left: -10%; background-color: var(--red)}
 }
 
 @keyframes left {
@@ -116,4 +127,7 @@
     width: 10vw;
     font-size: 1vw;
 }
+
+
+
 }
