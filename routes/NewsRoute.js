@@ -30,4 +30,8 @@ router.get("/getNews", async (req,res) => {
     }
 })
 
+router.get("/:id", async (req,res) => {
+    res.status(500).json({message: "W.I.P."});
+})
+
 module.exports = router;

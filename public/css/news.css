@@ -1,86 +1,138 @@
-.main{
-    display: grid;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    text-align: center;
-    grid-template-columns: repeat(3, 1fr);
-    margin-left: 100px;
+
+body{
+    background-color: #eee;
 }
 
+.container{
+    display: grid;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1.5rem;
+    margin-top: 6rem;
+}
 
-.articles{
-    min-height: 600px;
-    max-width: 400px;
-    box-shadow: 0 0 32px rgb(0, 0, 0);
+.news-post {
+    margin-bottom: 4rem;
+    width: 100%;
+    max-width: 90rem;
+    padding: 5rem;
+    box-shadow: 0 1.4rem 8rem rgba(0,0,0,0.2);
+    border-radius: .8rem;
+    display: flex;
+    align-items: center;
+}
+
+img{
+    width: 100%;
+}
+
+.news-post__img {
+    min-width: 35rem;
+    max-width: 35rem;
+    height: 20rem;
+    transform: translateX(-8rem);
+    position: relative;
+}
+
+.news-post__img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: .8rem;
+}
+
+.news-post__img::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, rgba(79,172,254,.5), rgba(0,242,254,.5));
+    box-shadow: .5rem .5rem 3rem 1px rgba(0,0,0,0.3);
+    border-radius: .8rem;
+}
+
+.news-post__date span{
+    display: block;
+    color: rgba(0,0,0,0.5);
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: .5rem 0;
+}
+
+.news-post__title{
+    font-size: 2.5rem;
+    margin: 1.5rem 0 2rem;
+    text-transform: uppercase;
+    color: #4facfe;
+}
+
+.news-post__text{
+    margin-bottom: 3rem;
+    font-size: 1.4rem;
+    color: rgba(0,0,0,0.7);
+    /*cut text off after line 5*/
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;   
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.news-post__cta{
+    display: inline-block;
+    padding: 1.5rem 3rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    color: #fff;
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    border-radius: .8rem;
+    text-decoration: none;
     transition: all .5s ease;
 }
 
-.articles:hover{
+.news-post__cta:hover{
     transform: scale(1.1);
-}
-
-.articles img{
-    max-width: 385px;
-    max-height: 360px;
-    box-shadow: 0 0 6px rgb(0, 0, 0);
-}
-
-.articles h1{
-    font-size: 2em;
     color: black;
 }
 
-.articles p{
-    margin-top: 40px;
-    color: black;
-    max-height: 200px;    
-    /*cut text off after line 7*/
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 7;
-    -webkit-box-orient: vertical;
-}
 
-.articles a{
-    text-decoration: none;
-}
-
-.articles button{
-    margin-top: 50px;
-    background: var(--pop);
-    border: none;
-    padding: 5px 20px;
-    font-size: 16px;
-    transition: all .4s ease;
-    cursor: pointer;
-    border-radius: 25px;
-    color: white;
-}
-
-.articles button:hover{
-    transform: scale(1.2);
-}
-
-@media only screen and (max-width: 768px) {
-    .main{
-        grid-template-columns: repeat(1, 1fr);
-        margin-left: 75px;
-    }
-    .articles{
-        max-width: 60vw;
-        min-height: 400px;
-        margin-top: 120px;
+@media screen and (max-width: 1068px){
+    .news-post{
+        max-width: 80rem;
     }
 
-    .articles p{
-        max-height: 100px;
-        -webkit-line-clamp: 4;
+    .news-post__img{
+        min-width: 30rem;
+        max-width: 30rem;
+    }
+}
+
+@media screen and (max-width: 868px){
+    .news-post{
+        max-width: 70rem;
+    }
+}
+
+@media screen and (max-width: 768px){
+
+    .container{
+        margin-top: 14rem;
+    }
+    .news-post{
+        padding: 2.5rem;
+        flex-direction: column;
+        margin-bottom: 12rem;
     }
 
-    .articles img{
-        max-width: 80%;
+    .news-post__img{
+        min-width: 100%;
+        max-width: 100%;
+        transform: translate(0,-8rem);
     }
 }

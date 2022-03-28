@@ -31,25 +31,26 @@
     <nav id="nav">
     </nav>
 
-    <section class="main">
-        <div class="articles">
-            <h1>News Titel</h1>
-            <img src="img/car.jpg" alt="">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus iusto quos quas dolores temporibus facilis odit unde accusamus dolorem velit vitae, ratione voluptate. Rerum quos laudantium illum repellat repudiandae explicabo atque rem, a molestiae nesciunt, est beatae laborum tenetur. Deserunt ut soluta voluptatem!</p>
-            <a href=""><button>Lees Meer</button></a>
-        </div>
-        <div class="articles">
-            <h1>News Titel</h1>
-            <img src="img/car.jpg" alt="">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus iusto quos quas dolores temporibus facilis odit unde accusamus dolorem velit vitae, ratione voluptate. Rerum quos laudantium illum repellat repudiandae explicabo atque rem, a molestiae nesciunt, est beatae laborum tenetur. Deserunt ut soluta voluptatem!</p>
-            <a href=""><button>Lees Meer</button></a>
-        </div>
-        <div class="articles">
-            <h1>News Titel</h1>
-            <img src="img/car.jpg" alt="">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus iusto quos quas dolores temporibus facilis odit unde accusamus dolorem velit vitae, ratione voluptate. Rerum quos laudantium illum repellat repudiandae explicabo atque rem, a molestiae nesciunt, est beatae laborum tenetur. Deserunt ut soluta voluptatem!</p>
-            <a href=""><button>Lees Meer</button></a>
-        </div>
+    <section class="container">
+        <!--create for loop-->
+        <% for (var i = 0; i < newsitems.length; i++) { %>
+            <div class="news-post">
+                <div class="news-post__img">
+                    <!--put img source to newsitems-->
+                    <img src="<%= newsitems[i].newsAfbeelding %>" alt="">
+                </div>
+                <div class="news-post__info">
+                    <div class="news-post__date">
+                        <span><%= newsitems[i].createdAt.toDateString()  %></span>
+                    </div>
+                    <h1 class="news-post__title"><%= newsitems[i].newsTitel %> </h1>
+                    <p class="news-post__text">
+                        <%= newsitems[i].newsInhoud %>
+                    </p>
+                    <a href="/news/<%= newsitems[i]._id %>" class="news-post__cta">Lees meer</a>
+                </div>
+            </div>
+        <% } %>
     </section>
 
 </body>
