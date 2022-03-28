@@ -51,6 +51,7 @@ app.use("/product", productRouter)
 app.use("/news", newsRouter)
 app.use("/validate", Validetor)
 
+
 mongoose.connect(process.env.MONGO_SEC).then(() => {
     console.log("Database is aan het luistern pssh!");
 }).catch((err) => {
