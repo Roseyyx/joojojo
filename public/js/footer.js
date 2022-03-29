@@ -9,9 +9,11 @@ document.getElementById("footer").innerHTML = `
         <div id="line"></div>
         <div id="contact">
             <ul id="rechts">
-                <li><a href="" class="footer-link footerKnop">Contact</a></li>
-                <li><a href="" class="footer-link footerKnop">Feesboek</a></li>
-                <li><a href="" class="footer-link footerKnop">Twotter</a></li>
+                <a href="" class="footer-link footerKnop">Contact</a>
+                <a href="" class="footer-link footerKnop"><img src="/img/facebook.png" alt="facebook" width="50px" height="50px"></a>
+                <a href="" class="footer-link footerKnop"><img src="/img/instagram.png" alt="facebook" width="50px" height="50px"></a>
+                <a href="" class="footer-link footerKnop"><img src="/img/twitter.png" alt="facebook" width="50px" height="50px"></a>
+
             </ul>
         </div>
 `
