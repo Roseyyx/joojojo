@@ -31,7 +31,8 @@ router.get("/getNews", async (req,res) => {
 })
 
 router.get("/:id", async (req,res) => {
-    res.status(500).json({message: "W.I.P."});
+    let NieuwsItem = await News.findOne({_id: req.params.id});
+    res.status(500).json(NieuwsItem);
 })
 
 module.exports = router;
