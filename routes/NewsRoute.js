@@ -2,6 +2,7 @@ const News = require("../modules/News");
 
 const router = require("express").Router();
 
+
 router.post("/createNews", async (req,res) => {
     let NewNews = await News.findOne({newsTitel: req.body.name});
     if (NewNews){
@@ -31,8 +32,7 @@ router.get("/getNews", async (req,res) => {
 })
 
 router.get("/:id", async (req,res) => {
-    let NieuwsItem = await News.findOne({_id: req.params.id});
-    res.status(500).json(NieuwsItem);
+    res.redirect('/' + req.params.id);
 })
 
 module.exports = router;
