@@ -12,26 +12,37 @@
     <title>Document</title>
 </head>
 <body>
-    <% if (errorcode != '') { %>
-        <div class="alert error">
-            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-            <p><i class="fas fa-minus-circle"></i> <%= errorcode %></p>
+    <div id="gridContainer">
+        <p id="welcome">Welkom <span id="userID">[user]!</span></p>
+
+        <div class="left">
+            <div id="bestelgeschiedenis">
+                <div>
+                    <img src="images/placeholder.png">
+                    <p class="title">Titel</p>
+                    <p class="desc">lorum ipsum</p>
+                </div>
+            </div>
         </div>
-    <% } %> 
-    <% if (successcode != '') { %>
-        <div class="alert success">
-            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-            <p><i class="fas fa-check"></i> <%= successcode %></p>
+        <div class="center">
+            
         </div>
-    <% } %> 
-    <form action="/product/createProduct" method="post">
-        <label>Product Naam*</label>
-        <input type="text" name="name" placeholder="Product Naam*">
-        <label>Product Prijs*</label>
-        <input name="prijs" placeholder="Product Prijs*">
-        <label>Product Aantal</label>
-        <input name="aantal" placeholder="Product Aantal">
-        <button type="submit">Maak Product</button>
-    </form>
+        <div class="right">
+            <div class="userSettings">
+                <p class="sep">Account Instellingen</p>
+
+                <a href="" id="veranderGebruikersNaam" class="sep">Verander Gebruikersnaam</a>
+                <a href="" id="veranderMail" class="sep">Verander E-Mail</a>
+
+                <hr class="account sep">
+
+                <a href="" id="tegoed" class="sep">Weizig Tegoed</a>
+
+                <hr class="account sep">
+
+                <button id="admin" class="sep">Admin</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

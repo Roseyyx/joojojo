@@ -58,6 +58,6 @@ mongoose.connect(process.env.MONGO_SEC).then(() => {
 });
 
 
-app.listen(3000, () => {
+app.listen(3005, () => {
     console.log("Backend server is aan het lopen!");
 })
