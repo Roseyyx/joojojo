@@ -8,6 +8,7 @@
     --donkerBG: #393E41;
     --donkerBGAlpha: #2e3235c0;
     --lichtBG: #D3D0CB;
+    --superLichtBG: #DBD9D5;
     --donkerder: #1e2019;
     --pop: #587b7f;
 }
@@ -23,7 +24,7 @@ p {
 #gridContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 4fr;
     gap: 50px;
     margin: 2%;
 }
@@ -60,7 +61,72 @@ p {
 }
 
 .left > #bestelgeschiedenis > div {
-    
+    margin: 3% 2% 3% 2%;
+    background-color: var(--superLichtBG);
+    padding: 2% 7% 2% 2%;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 3fr;
+    border-radius: 15px;
+}
+
+.left > #bestelgeschiedenis > div > img {
+    grid-column: 1;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.left > #bestelgeschiedenis > div > div {
+    grid-column: 2;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.left > #bestelgeschiedenis > div > div > .titel {
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.left > #bestelgeschiedenis > div > div > .prijs, .aantal, .totaal {
+    font-size: 1.2rem;
+}
+
+.rightSpan{
+    float: right;
+    text-decoration: underline;
+}
+
+.center > div {
+    margin: 3% 2% 3% 2%;
+    background-color: var(--superLichtBG);
+    padding: 2% 7% 2% 2%;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 3fr;
+    border-radius: 15px;
+}
+
+.center > div > img {
+    grid-column: 1;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.center > div > div {
+    grid-column: 2;
+}
+
+.center > div > .titel {
+    font-size: 1.7rem;
+}
+
+.center > div .desc {
+    font-size: 1.2rem;
 }
 
 .right > .userSettings > a, .right > .tegoed > a {
@@ -95,4 +161,30 @@ p {
     background-color: var(--redHover);
     border-color: var(--red);
     color: var(--white);
+}  
+
+@media only screen and (max-width: 1080px) {
+    #gridContainer {
+        display: grid;
+        grid-template-rows: 2.7rem auto auto auto;
+        grid-template-columns: 1fr;
+        gap: 50px;
+        margin: 2%;
+    }
+
+    #welcome {
+        grid-area: 1 / 1 / 1 / 1;
+    }
+
+    .left {
+        grid-area: 2 / 1 / 2 / 1;
+    }
+
+    .center {
+        grid-area: 3 / 1 / 3 / 1;
+    }
+
+    .right {
+        grid-area: 4 / 1 / 4 / 1;
+    }
 }

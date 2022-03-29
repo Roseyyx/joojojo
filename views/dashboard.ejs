@@ -12,37 +12,80 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="gridContainer">
-        <p id="welcome">Welkom <span id="userID">[user]!</span></p>
+<div id="gridContainer">
+    <p id="welcome">Welkom <span id="userID">[user]!</span></p>
 
-        <div class="left">
-            <div id="bestelgeschiedenis">
+    <div class="left">
+        <div id="bestelgeschiedenis">
+            <div>
+                <img src="img/placeholder.png">
                 <div>
-                    <img src="images/placeholder.png">
-                    <p class="title">Titel</p>
-                    <p class="desc">lorum ipsum</p>
+                    <p class="titel">Ticket</p>
+                    <p class="prijs">Prijs: <span class="rightSpan" id="prijs">€30</span> </p>
+                    <p class="aantal">Aantal: <span class="rightSpan" id="aantal">2</span> </p>
+                    <p class="totaal">totaal: <span class="rightSpan" id="totaal">€60</span> </p>
+                </div>
+            </div>
+            <div>
+                <img src="img/placeholder.png">
+                <div>
+                    <p class="titel">Ticket</p>
+                    <p class="prijs">Prijs: <span class="rightSpan" id="prijs">€30</span> </p>
+                    <p class="aantal">Aantal: <span class="rightSpan" id="aantal">2</span> </p>
+                    <p class="totaal">totaal: <span class="rightSpan" id="totaal">€60</span> </p>
                 </div>
             </div>
         </div>
-        <div class="center">
-            
+    </div>
+    <div class="center">
+        <div>
+            <img src="img/placeholder.png">
+            <div>
+                <p class="titel">Titel</p>
+                <p class="desc">lorum ipsum</p>
+            </div>
         </div>
-        <div class="right">
-            <div class="userSettings">
-                <p class="sep">Account Instellingen</p>
-
-                <a href="" id="veranderGebruikersNaam" class="sep">Verander Gebruikersnaam</a>
-                <a href="" id="veranderMail" class="sep">Verander E-Mail</a>
-
-                <hr class="account sep">
-
-                <a href="" id="tegoed" class="sep">Weizig Tegoed</a>
-
-                <hr class="account sep">
-
-                <button id="admin" class="sep">Admin</button>
+        <div>
+            <img src="img/placeholder.png">
+            <div>
+                <p class="titel">Titel</p>
+                <p class="desc">lorum ipsum</p>
+            </div>
+        </div>
+        <div>
+            <img src="img/placeholder.png">
+            <div>
+                <p class="titel">Titel</p>
+                <p class="desc">lorum ipsum</p>
+            </div>
+        </div>
+        <div>
+            <img src="img/placeholder.png">
+            <div>
+                <p class="titel">Titel</p>
+                <p class="desc">lorum ipsum</p>
             </div>
         </div>
     </div>
+    <div class="right">
+        <div class="userSettings">
+            <p class="sep">Account Instellingen <i class="fas fa-cog"></i></p>
+
+
+            <a href="" id="veranderGebruikersNaam" class="sep"><i class="fas fa-at"></i> Verander Email</a>
+            <hr class="account sep">
+            
+            <a href="" id="veranderMail" class="sep"><i class="fas fa-key"></i> Verander Wachtwoord</a>
+
+            <hr class="account sep">
+
+            <a href="" id="tegoed" class="sep"><i class="fas fa-money-check-alt"></i> Budget Toevoegen</a>
+
+            <hr class="account sep">
+
+            <button id="admin" class="sep">Admin <i class="fas fa-user"></i></button>
+        </div>
+    </div>
+</div>
 </body>
 </html>
