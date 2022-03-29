@@ -25,6 +25,11 @@ router.get('/news', async (req, res) => {
     res.render('news', {errorcode: req.session.errorcode, successcode: req.session.successcode, newsitems: items, winkel: producten});
 })
 
+router.get('/:id', async (req, res) => {
+    let NieuwsItem = await News.findOne({_id: req.params.id});
+    res.render('artikels', {errorcode: req.session.errorcode, successcode: req.session.successcode, data: NieuwsItem});
+})
+
 router.get('', (req, res) => {
     res.render('index');
 })

@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/news.css">
+    <link rel="stylesheet" href="css/artikel.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 
     <script defer src="js/alerts.js"></script>
     <script defer src="js/footer.js"></script>
     <script defer src="js/nav.js"></script>
 
-    <title>Nieuws - GP-Zandvoort</title>
+    <title>Nieuws Artikel - GP-Zandvoort</title>
 </head>
 <body>
     <% if (errorcode != '') { %>
@@ -31,24 +31,26 @@
     <nav id="nav">
     </nav>
 
-    <section class="container">
-        <% for (var i = 0; i < newsitems.length; i++) { %>
-            <div class="news-post">
-                <div class="news-post__img">
-                    <img src="<%= newsitems[i].newsAfbeelding %>" alt="">
+    <section class="hoofd">
+        <div class="container">
+            <header>
+                <h1 class="heading-1"><%= data.newsTitel %></h1>
+                <div class="sub-heading">
+                    <p><span><%= data.createdAt.toDateString()  %></span></p>
                 </div>
-                <div class="news-post__info">
-                    <div class="news-post__date">
-                        <span><%= newsitems[i].createdAt.toDateString()  %></span>
-                    </div>
-                    <h1 class="news-post__title"><%= newsitems[i].newsTitel %> </h1>
-                    <p class="news-post__text">
-                        <%= newsitems[i].newsInhoud %>
+            </header>
+        </div>
+    
+        <div class="main">
+            <div class="home">
+                <div class="left">
+                    <img src="<%= data.newsAfbeelding %>" alt="" class="home-img">
+                    <p class="heading-2">
+                        <%= data.newsInhoud %>
                     </p>
-                    <a href="/news/<%= newsitems[i]._id %>" class="news-post__cta">Lees meer</a>
                 </div>
             </div>
-        <% } %>
+        </div>
     </section>
 
 </body>
