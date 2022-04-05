@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const dotenv = require('dotenv');
-dotenv.config({ path: './.env' });
+dotenv.config({ path: '.env' });
 const session = require("express-session");
 const MongoDBSession = require("connect-mongodb-session")(session);
 const flash = require("connect-flash")
@@ -43,7 +43,6 @@ app.use((req,res,next) => {
     req.session.successcode = req.flash("success_code");
     next();
 })
-
 // Define Routes
 app.use("", mainRouter)
 app.use("/auth", userRouter)
@@ -56,6 +55,7 @@ mongoose.connect(process.env.MONGO_SEC).then(() => {
     console.log("Database is aan het luistern pssh!");
 }).catch((err) => {
     console.log(err);
+    console.log("Database is niet aan het luisteren pssh!");
 });
 
 
