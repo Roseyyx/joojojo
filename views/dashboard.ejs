@@ -3,89 +3,89 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-
-    <script defer src="js/alerts.js"></script>
-
     <title>Document</title>
+    <link rel="stylesheet" href="css/index.css" type="text/css">
+    <link rel="stylesheet" href="css/dashboard.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 </head>
 <body>
-<div id="gridContainer">
-    <p id="welcome">Welkom <span id="userID">[user]!</span></p>
+    <div id="gridContainer">
+        <p id="welcome">Welkom <span id="userID">[user]!</span></p>
 
-    <div class="left">
-        <div id="bestelgeschiedenis">
-            <div>
+        <div class="left">
+            <div id="bestelgeschiedenis">
+                <!-- dit is allemaal placeholder, geef de juiste classes / ID's en het zou moeten werken -->
+                <!-- <div>
+                    <img src="img/placeholder.png">
+                    <div>
+                        <p class="titel">Ticket</p>
+                        <p class="prijs">Prijs: <span class="rightSpan" id="prijs">€30</span> </p>
+                        <p class="aantal">Aantal: <span class="rightSpan" id="aantal">2</span> </p>
+                        <p class="totaal">totaal: <span class="rightSpan" id="totaal">€60</span> </p>
+                    </div>
+                </div>
+                <div>
+                    <img src="img/placeholder.png">
+                    <div>
+                        <p class="titel">Ticket</p>
+                        <p class="prijs">Prijs: <span class="rightSpan" id="prijs">€30</span> </p>
+                        <p class="aantal">Aantal: <span class="rightSpan" id="aantal">2</span> </p>
+                        <p class="totaal">totaal: <span class="rightSpan" id="totaal">€60</span> </p>
+                    </div>
+                </div> --> 
+            </div>
+        </div>
+        <div class="center">
+            <!-- dit is allemaal placeholder, geef de juiste classes / ID's en het zou moeten werken -->
+            <!-- <div>
                 <img src="img/placeholder.png">
                 <div>
-                    <p class="titel">Ticket</p>
-                    <p class="prijs">Prijs: <span class="rightSpan" id="prijs">€30</span> </p>
-                    <p class="aantal">Aantal: <span class="rightSpan" id="aantal">2</span> </p>
-                    <p class="totaal">totaal: <span class="rightSpan" id="totaal">€60</span> </p>
+                    <p class="titel">Titel</p>
+                    <p class="desc">lorum ipsum</p>
                 </div>
             </div>
             <div>
                 <img src="img/placeholder.png">
                 <div>
-                    <p class="titel">Ticket</p>
-                    <p class="prijs">Prijs: <span class="rightSpan" id="prijs">€30</span> </p>
-                    <p class="aantal">Aantal: <span class="rightSpan" id="aantal">2</span> </p>
-                    <p class="totaal">totaal: <span class="rightSpan" id="totaal">€60</span> </p>
+                    <p class="titel">Titel</p>
+                    <p class="desc">lorum ipsum</p>
                 </div>
             </div>
+            <div>
+                <img src="img/placeholder.png">
+                <div>
+                    <p class="titel">Titel</p>
+                    <p class="desc">lorum ipsum</p>
+                </div>
+            </div>
+            <div>
+                <img src="img/placeholder.png">
+                <div>
+                    <p class="titel">Titel</p>
+                    <p class="desc">lorum ipsum</p>
+                </div>
+            </div>
+        </div> -->
+        <div class="right">
+            <div class="userSettings">
+                <p class="sep">Account Instellingen <i class="fas fa-cog"></i></p>
+
+
+                <a href="" id="veranderGebruikersNaam" class="sep"><i class="fas fa-at"></i> Verander Email</a>
+                <hr class="account sep">
+                
+                <a href="" id="veranderMail" class="sep"><i class="fas fa-key"></i> Verander Wachtwoord</a>
+
+                <hr class="account sep">
+
+                <a href="" id="tegoed" class="sep"><i class="fas fa-money-check-alt"></i> Budget Toevoegen</a>
+
+                <hr class="account sep">
+
+                <!-- admin button -->
+                <button id="admin" class="sep">Admin <i class="fas fa-user"></i></button> 
+            </div>
         </div>
     </div>
-    <div class="center">
-        <div>
-            <img src="img/placeholder.png">
-            <div>
-                <p class="titel">Titel</p>
-                <p class="desc">lorum ipsum</p>
-            </div>
-        </div>
-        <div>
-            <img src="img/placeholder.png">
-            <div>
-                <p class="titel">Titel</p>
-                <p class="desc">lorum ipsum</p>
-            </div>
-        </div>
-        <div>
-            <img src="img/placeholder.png">
-            <div>
-                <p class="titel">Titel</p>
-                <p class="desc">lorum ipsum</p>
-            </div>
-        </div>
-        <div>
-            <img src="img/placeholder.png">
-            <div>
-                <p class="titel">Titel</p>
-                <p class="desc">lorum ipsum</p>
-            </div>
-        </div>
-    </div>
-    <div class="right">
-        <div class="userSettings">
-            <p class="sep">Account Instellingen <i class="fas fa-cog"></i></p>
-
-
-            <a href="" id="veranderGebruikersNaam" class="sep"><i class="fas fa-at"></i> Verander Email</a>
-            <hr class="account sep">
-            
-            <a href="" id="veranderMail" class="sep"><i class="fas fa-key"></i> Verander Wachtwoord</a>
-
-            <hr class="account sep">
-
-            <a href="" id="tegoed" class="sep"><i class="fas fa-money-check-alt"></i> Budget Toevoegen</a>
-
-            <hr class="account sep">
-
-            <button id="admin" class="sep">Admin <i class="fas fa-user"></i></button>
-        </div>
-    </div>
-</div>
 </body>
 </html>
