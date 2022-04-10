@@ -25,6 +25,10 @@ router.get('/news', async (req, res) => {
     res.render('news', {errorcode: req.session.errorcode, successcode: req.session.successcode, newsitems: items, winkel: producten});
 })
 
+router.get('/gokken', (req, res) => {
+    res.render('gokken');
+})
+
 router.get('', (req, res) => {
     res.render('index');
 })
