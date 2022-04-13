@@ -39,13 +39,19 @@ router.get("/getbudget", async (req, res) => {
 })
 
 router.post("/setbudget", async (req,res) =>{
-    let user = await User.findOne({username: "Modaal Gebruiker"});
     try {
+        let user = await User.findOne({username: "l"});
         if (user){
+            console.log(req.body)
             if (req.body.credits)
+            {
                 user.Budget = req.body.credits;
-            else
-                res.status(402).json("Geen bedrag toegegeven");
+                res.status(200).json("gelukt");
+                return;
+            }
+
+            res.status(402).json("Geen bedrag toegegeven");
+            return;
 
         }
     } catch (error) {
