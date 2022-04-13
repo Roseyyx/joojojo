@@ -13,6 +13,7 @@ const userRouter = require("./routes/UserRoute");
 const productRouter = require("./routes/ProductRoute");
 const newsRouter = require("./routes/NewsRoute");
 const Validater = require("./Helpers/Validator");
+const Budget = require("./routes/budgetToevoegen");
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
@@ -50,6 +51,7 @@ app.use("/auth", userRouter)
 app.use("/product", productRouter)
 app.use("/news", newsRouter)
 app.use("/validate", Validater)
+app.use("/budget", Budget);
 
 
 mongoose.connect(process.env.MONGO_SEC).then(() => {
