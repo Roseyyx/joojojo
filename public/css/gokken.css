@@ -1,0 +1,41 @@
+/* de kleuren en fonts */
+:root {
+    --buttonActive: hsl(120, 100%, 25%);
+    --buttonNope: hsla(120, 56%, 49%, 0);
+    font-family: 'Poppins', sans-serif;
+  }
+/* font import */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+  /* de animaties voor de sliders */
+
+body{
+    display: flex;
+    justify-content: center;
+}
+
+/* wrapper om de form en slider in het midden te krijgen */
+main{
+    margin-top: 15vh;
+    text-align: center;
+}
+
+.form label, input{
+    display: block;
+    width: 100%;
+}
+
+.form input{
+    margin-bottom: 20px;
+}
+
+.form .remember{
+    display: inline-block;
+}
+
+/* footer moet hier op absolute staan anders werkt het niet */
+footer{
+    position: absolute;
+}
+
+

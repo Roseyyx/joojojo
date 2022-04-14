@@ -23,6 +23,12 @@ body{
     justify-content: center;
 }
 
+#submitknop{
+    background-color: var(--red);
+    border-color: black;
+    padding: 5px;
+    border-radius: 5px;
+}
 /* wrapper om de form en slider in het midden te krijgen */
 .formWrapper{
     display: flex;

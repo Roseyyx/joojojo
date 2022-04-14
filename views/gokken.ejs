@@ -1,0 +1,45 @@
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- style -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/gokken.css">
+    <script defer src="js/footer.js"></script>
+    <script defer src="js/nav.js"></script>
+    <script defer src="js/gokken.js"></script>
+<!-- scripts -->
+    <title>Zandvoort - Home Pagina</title>
+</head>
+<body>
+    <nav id="nav">
+<!-- content staat in nav.js -->
+    </nav>
+    
+    <main>
+        <!-- inleg form -->
+        <div id="inlegForm">
+            <h3>Inlegformulier</h3>
+            <form >
+                <label for="phone">Bedrag</label>
+                <input type="number" name="bedrag" id="bedrag" placeholder="€ 10">
+                <label for="keuzes">Kies een coureur:</label>
+                <select id="keuzes" name="keuzes">
+                    <option value="Verstappe">Max Verstappe</option>
+                    <option value="Leclerc">Charles Leclerc</option>
+                    <option value="Russell">George Russell</option>
+                    <option value="Hamiltion">Lewis Hemilton</option>
+                </select> 
+                <button id="submit">versturen</button>
+            </form>
+            <div class="clock" id="countdown">
+                De uitslag word ieder half uur bekend. Leg in om de uitslag te zien.
+            </div>
+    </main>
+
+    <footer id="footer">
+<!-- content staat in footer.js -->
+    </footer>
+</body>
+</html>
