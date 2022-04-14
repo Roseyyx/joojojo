@@ -3,6 +3,10 @@ const Product = require('../modules/Product');
 
 const router = require('express').Router();
 
+router.get('/Beroeps', (req, res) => {
+    res.render('index');
+})
+
 router.get('/login', (req, res) => {
     if (req.session.isAuth) {
         res.redirect('/dashboard');
@@ -45,8 +49,5 @@ router.get('/:id', async (req, res) => {
     }
 })
 
-router.get('', (req, res) => {
-    res.render('index');
-})
 
 module.exports = router;
