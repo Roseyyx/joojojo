@@ -4,16 +4,28 @@ const uitslag = {
     winnaar: "",
 };
 
+let bedrag = 0;
+
+// controleren of de gebruiker een gok heeft gedaan
+if(localStorage.getItem("coureur")){
+  userChoice = localStorage.getItem("coureur");
+  bedrag = localStorage.getItem("bedrag");
+  update()
+}
+
 document.getElementById("submit").addEventListener("click", function (event) {
   event.preventDefault();
   // sla het antwoord op
   // haal het bedrag van het account
-  let bedrag = document.getElementById("bedrag").value;
+  bedrag = document.getElementById("bedrag").value;
   if (bedrag > 0) {
     update();
     if (uitslag.bekend) {
       alert(`Je hebt ${result() ? "gewonnen" : "verloren"}!`);
     } else {
+      // sla het bedrag en coureur op in localstorage
+      localStorage.setItem("coureur", document.getElementById("keuzes").value);
+      localStorage.setItem("bedrag", bedrag);
       update();
     }
   } else {
@@ -37,14 +49,16 @@ function randomWeighted(weights) {
     }
 }
 
+// "random" uitslag
 function result(){
     return win = randomWeighted([0.5, 0.2, 0.2, 0.2]);
 }
 
 // timer functie
-
+// oldDate zorgt ervoor dat de browser niet iedere tick word geupdate
 let oldDate = new Date();
 
+// slaap lekker
 function sleep(milliseconds) {
   return new Promise((resolve) => setTimeout(resolve, milliseconds));
 }
@@ -54,6 +68,7 @@ async function update() {
     const date = new Date();
     if (oldDate != date) {
       const minutes = date.getMinutes();
+      // ieder half uur wordt de uitslag bekend gemaakt
       if (minutes == 30 || minutes == 0) {
           update();
           uitslag.bekend = true;
