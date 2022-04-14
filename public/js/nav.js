@@ -1,6 +1,6 @@
 document.getElementById("nav").innerHTML = `
 <div class="nav-wrapper">
-            <a href="/" class="nav-link homeButton">Home</a>
+            <a href="/Beroeps" class="nav-link homeButton">Home</a>
             <div class="linkys">
                 <li><a href="/news" class="nav-link">Nieuws</a></li>
                 <li><a class="nav-link">|</a></li>

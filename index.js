@@ -11,6 +11,7 @@ const flash = require("connect-flash")
 const mainRouter = require("./routes/MainRoutes");
 const userRouter = require("./routes/UserRoute");
 const productRouter = require("./routes/ProductRoute");
+const walletRouter = require("./routes/BudgetRoute");
 const newsRouter = require("./routes/NewsRoute");
 const Validater = require("./Helpers/Validator");
 
@@ -35,6 +36,7 @@ app.use(session({
     secret: process.env.COOKIE_SEC,
     resave: false,
     saveUninitialized: false,
+    store: store
 }));
 app.use(flash());
 
@@ -49,6 +51,7 @@ app.use("", mainRouter)
 app.use("/auth", userRouter)
 app.use("/product", productRouter)
 app.use("/news", newsRouter)
+app.use("/budget", walletRouter)
 app.use("/validate", Validater)
 
 
@@ -59,6 +62,6 @@ mongoose.connect(process.env.MONGO_SEC).then(() => {
 });
 
 
-app.listen(3000, () => {
+app.listen(3001, () => {
     console.log("Backend is aan het lopen op: http://localhost:3000");
 })
