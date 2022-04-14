@@ -62,6 +62,6 @@ mongoose.connect(process.env.MONGO_SEC).then(() => {
 });
 
 
-app.listen(3001, () => {
+app.listen(3000, () => {
     console.log("Backend is aan het lopen op: http://localhost:3000");
 })
