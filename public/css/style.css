@@ -142,7 +142,7 @@ nav{
     position: relative;
     top: 60px;
     height: 60vh;
-    background-image: url("/img/track.png"), linear-gradient(to left, var(--black), var(--white));
+    background-image: url("/img/track-gray.png"), linear-gradient(to left, var(--pop), var(--white));
     background-position: left;
     background-size: contain;
     background-repeat: no-repeat;
@@ -214,7 +214,7 @@ nav{
     position: relative;
     top: 60px;
     height: 60vh;
-    background-image: url("/img/autotje.png"), linear-gradient(to right, var(--pop), var(--white));
+    background-image: url("/img/autotje.png"), linear-gradient(to right, var(--black), var(--white));
     background-position: right;
     background-size: contain;
     background-repeat: no-repeat;
@@ -222,7 +222,7 @@ nav{
 }
 
 .section3 #mainNewsDesc{
-    top: 1vh;
+    top: 2vh;
     left: 5vw;
     position: relative;
     max-width: 50%;
@@ -230,7 +230,7 @@ nav{
 }
 
 .section3 #mainNewsTitel{
-    top: 2vh;
+    top: 3vh;
     left: 6vw;
     position: relative;
     color: white;
@@ -262,6 +262,8 @@ footer #rechts{
     margin-right: 5vw;
     padding: 5px 0px 5px 0px;
     float: right;
+    display: flex;
+    align-items: center;
 }
 
 footer a:hover{
@@ -271,6 +273,8 @@ footer a:hover{
 footer a{
     color: var(--white);
     text-decoration: none;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 /* links in de footer */
@@ -281,6 +285,8 @@ footer a{
 footer img{
     background-color: white;
     border-radius: 15px;
+    width: 30px;
+    height: 30px;
 }
 
 footer #line{
@@ -297,8 +303,22 @@ footer #line{
 
 @media only screen and (max-width: 810px) {
 
+nav{
+    font-size: 13px;
+}
+
 nav .nav-link{
     margin-right: 0;
+}
+
+nav button{
+    width: fit-content;
+}
+
+.nav-wrapper button{
+    font-size: 13px;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 #heroImg #titel{

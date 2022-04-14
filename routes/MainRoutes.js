@@ -20,9 +20,20 @@ router.get('/dashboard',  (req, res) => {
 });
 
 router.get('/news', async (req, res) => {
-    let items = await News.find({});
-    let producten = await Product.find({});
-    res.render('news', {errorcode: req.session.errorcode, successcode: req.session.successcode, newsitems: items, winkel: producten});
+    try {
+        let items = await News.find({}).sort({_id:-1});
+        res.render('news', {errorcode: req.session.errorcode, successcode: req.session.successcode, newsitems: items});
+    } catch (error) {
+    }
+})
+
+router.get('/:id', async (req, res) => {
+    try {
+        let NieuwsItem = await News.findOne({_id: req.params.id});
+        res.render('artikels', {errorcode: req.session.errorcode, successcode: req.session.successcode, data: NieuwsItem});
+    } catch (error) {
+        
+    }
 })
 
 router.get('/gokken', (req, res) => {
