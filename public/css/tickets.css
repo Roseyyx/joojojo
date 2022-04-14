@@ -1,0 +1,53 @@
+
+.hoofd{
+    display: grid;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12rem;
+    color: black;
+}
+
+.grid1{
+    border:1px solid #ccc;
+    min-width: 400px;
+    max-width: 400px;
+    min-height: 400px;
+    box-shadow: 0px 0px 12px 1px rgba(0,0,0,.4);
+}
+
+.grid1 h1{
+    font-size: 2rem;
+}
+
+.grid1 h3{
+    margin-top: 4rem;
+}
+
+.grid1 button{
+    position: relative;
+    top: 165px;
+    left: 100px;
+    background: var(--red);
+    border: none;
+    padding: 5px 20px;
+    font-size: 16px;
+    transition: all .4s ease;
+    cursor: pointer;
+}
+
+.grid1 button:hover{
+    background: var(--black);
+    color: var(--red);
+}
+
+.grid1 p{
+    position: relative;
+    top: 190px;
+}
