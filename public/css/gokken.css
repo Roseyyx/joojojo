@@ -16,13 +16,13 @@ body{
 
 /* wrapper om de form en slider in het midden te krijgen */
 main{
-    display: flex;
-    justify-content: center;
     margin-top: 15vh;
+    text-align: center;
 }
 
 .form label, input{
     display: block;
+    width: 100%;
 }
 
 .form input{

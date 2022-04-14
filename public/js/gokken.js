@@ -76,9 +76,11 @@ async function update() {
           if(minutes < 30){
         document.getElementById("countdown").innerHTML =
           "De volgende uitslag word bekend over: " + (30 - minutes) + " minuten";
+          document.getElementById("countdown").innerHTML +=  `<br>Je hebt ${bedrag} euro ingelegd op ${userChoice}`;
           } else {
                 document.getElementById("countdown").innerHTML = "De volgende uitslag word bekend over: " + (60 - minutes) + " minuten";
-            }
+                document.getElementById("countdown").innerHTML += `<br>Je hebt ${bedrag} euro ingelegd op ${userChoice}`;
+              }
           oldDate = date;
           uitslag.bekend = false;
           update();

@@ -27,6 +27,15 @@ router.get('/news', async (req, res) => {
     }
 })
 
+
+router.get('/gokken', (req, res) => {
+    if (req.session.isAuth){
+        res.render('gokken', {errorcode: req.session.errorcode, successcode: req.session.successcode});
+    }
+    else
+        res.redirect('/login');
+})
+
 router.get('/:id', async (req, res) => {
     try {
         let NieuwsItem = await News.findOne({_id: req.params.id});
@@ -34,10 +43,6 @@ router.get('/:id', async (req, res) => {
     } catch (error) {
         
     }
-})
-
-router.get('/gokken', (req, res) => {
-    res.render('gokken');
 })
 
 router.get('', (req, res) => {
