@@ -1,3 +1,4 @@
+
 const News = require('../modules/News');
 const Product = require('../modules/Product');
 
@@ -52,6 +53,7 @@ router.get('/:id', async (req, res) => {
         
     }
 })
+
 
 
 module.exports = router;

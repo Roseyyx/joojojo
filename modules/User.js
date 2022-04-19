@@ -1,3 +1,4 @@
+
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
@@ -6,5 +7,6 @@ const userSchema = new mongoose.Schema({
     isAdmin: { type: Boolean, default: false },
     Wallet: {type: Number, default: 0},
 }, { timestamps: true });
+
 
 module.exports = mongoose.model("User", userSchema);

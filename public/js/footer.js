@@ -1,3 +1,4 @@
+
 document.getElementById("footer").innerHTML = `
 <ul id="links">
                 <li><a href="/" class="footer-link footerKnop">Home</a></li>
@@ -17,4 +18,5 @@ document.getElementById("footer").innerHTML = `
 
             </ul>
         </div>
+
 `

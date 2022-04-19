@@ -1,3 +1,4 @@
+
 const User = require("../modules/User");
 const router = require("express").Router();
 
@@ -46,6 +47,5 @@ router.post("/login", async (req, res) => {
         res.redirect("/login");
     }
 })
-
 
 module.exports = router;
