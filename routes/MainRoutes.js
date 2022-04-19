@@ -7,6 +7,10 @@ router.get('/Beroeps', (req, res) => {
     res.render('index');
 })
 
+router.get('/tickets', (req, res) => {
+    res.render('ticket');
+})
+
 router.get('/login', (req, res) => {
     if (req.session.isAuth) {
         res.redirect('/dashboard');

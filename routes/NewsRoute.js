@@ -33,10 +33,9 @@ router.get("/getNews", async (req,res) => {
 
 router.get("/:id", async (req,res) => {
     try {
-        res.redirect('/' + req.params.id);
+        return res.redirect('/' + req.params.id);
     } catch (error) {
-        console.log(error);
-        res.status(500).json(error);
+        return res.status(500).json(error);
     }
 })
 
