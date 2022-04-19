@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
 
 :root {
@@ -109,9 +110,10 @@ nav{
     height: 85vh;
     width: 100%;
     top: 60px;
-    background-image: url("/img/headerImg.jpg");
+    background-image: url("/img/zandje.jpg");
     background-position: center;
     background-size: cover;
+    text-align: center;
 }
 
 #heroImg #titel{
@@ -120,7 +122,20 @@ nav{
     background-color: var(--white);
     display: inline-block;
     padding: 20px;
-    border-radius: 0 0 10px 0;
+    border-radius: 0 0 10px 10px;
+    background-color: #000000;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;  
+    top: 6vh;  
+}
+
+#titelTitle{
+    font-size: 2em;
+    color: var(--white);
+    text-shadow: 5px 5px 3px #000000;
+    margin-top: 20vh;   
+    display: inline-block; 
 }
 
 /* De tweede afbeelding op de index */
@@ -128,12 +143,12 @@ nav{
     position: relative;
     top: 60px;
     height: 60vh;
-    background-image: url("/img/track.png");
+    background-image: url("/img/track-gray.png"), linear-gradient(to left, var(--pop), var(--white));
     background-position: left;
     background-size: contain;
     background-repeat: no-repeat;
-    background-color: var(--pop);
-    color: var(--black);
+    background-color: var(--black);
+    color: var(--white);
 }
 
 .section2 #information{
@@ -142,6 +157,8 @@ nav{
     display: block;
     float: right;
     margin-right: 10vw;
+    font-size: 3vh;
+    color: var(--red);
 }
 
 
@@ -160,6 +177,7 @@ nav{
     opacity: 1;
     transition: opacity 0.6s;
 }
+
 
 .alert p{
     float: left;
@@ -186,6 +204,7 @@ nav{
     z-index: 100;
 }
 
+
 /*Success Alert*/
 .success {
     background: #d6f5d6;
@@ -196,24 +215,26 @@ nav{
     position: relative;
     top: 60px;
     height: 60vh;
-    background-image: url("/img/car.jpg");
+    background-image: url("/img/autotje.png"), linear-gradient(to right, var(--black), var(--white));
     background-position: right;
     background-size: contain;
     background-repeat: no-repeat;
-    background-color: var(--gray);
     color: var(--black);
 }
 
 .section3 #mainNewsDesc{
-    top: 1vh;
+    top: 2vh;
     left: 5vw;
     position: relative;
+    max-width: 50%;
+    color: white;
 }
 
 .section3 #mainNewsTitel{
-    top: 2vh;
+    top: 3vh;
     left: 6vw;
     position: relative;
+    color: white;
 }
 
 /* de footer */
@@ -224,7 +245,7 @@ footer{
     min-height: 15vh;
     bottom: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 2fr;
     width: 100%;
     /* position: absolute; */
 }
@@ -242,20 +263,31 @@ footer #rechts{
     margin-right: 5vw;
     padding: 5px 0px 5px 0px;
     float: right;
+    display: flex;
+    align-items: center;
 }
 
 footer a:hover{
-    color: var(--white);
+    color: var(--red);
 }
 
 footer a{
-    color: var(--black);
+    color: var(--white);
     text-decoration: none;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 /* links in de footer */
 .footerKnop{
     font-size: 0.7rem;
+}
+
+footer img{
+    background-color: white;
+    border-radius: 15px;
+    width: 30px;
+    height: 30px;
 }
 
 footer #line{
@@ -272,8 +304,22 @@ footer #line{
 
 @media only screen and (max-width: 810px) {
 
+nav{
+    font-size: 13px;
+}
+
 nav .nav-link{
     margin-right: 0;
+}
+
+nav button{
+    width: fit-content;
+}
+
+.nav-wrapper button{
+    font-size: 13px;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 #heroImg #titel{
@@ -288,7 +334,26 @@ nav .nav-link{
     margin-top: 3vh;
     margin-right: 5vw;
     text-align: right;
+    font-size: 2.5vw;
 }
+
+.section3 #mainNewsDesc{
+    max-width: 75%;
+    overflow: hidden;
+    color: var(--red);
+    font-size: 1.5vw;
+}
+
+.section3 #mainNewsTitel{
+    color: var(--red);
+    font-size: 1.5vw;
+}
+
+footer img{
+    width: 25px;
+    height: auto;
+}
+
 
 
 }

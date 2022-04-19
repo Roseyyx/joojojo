@@ -1,6 +1,8 @@
+
 const News = require("../modules/News");
 
 const router = require("express").Router();
+
 
 router.post("/createNews", async (req,res) => {
     let NewNews = await News.findOne({newsTitel: req.body.name});
@@ -29,5 +31,14 @@ router.get("/getNews", async (req,res) => {
         res.status(500).json(error);
     }
 })
+
+router.get("/:id", async (req,res) => {
+    try {
+        return res.redirect('/' + req.params.id);
+    } catch (error) {
+        return res.status(500).json(error);
+    }
+})
+
 
 module.exports = router;

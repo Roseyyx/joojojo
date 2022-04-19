@@ -1,8 +1,9 @@
+
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const dotenv = require('dotenv');
-dotenv.config({ path: './.env' });
+dotenv.config({ path: '.env' });
 const session = require("express-session");
 const MongoDBSession = require("connect-mongodb-session")(session);
 const flash = require("connect-flash")
@@ -11,9 +12,9 @@ const flash = require("connect-flash")
 const mainRouter = require("./routes/MainRoutes");
 const userRouter = require("./routes/UserRoute");
 const productRouter = require("./routes/ProductRoute");
+const walletRouter = require("./routes/BudgetRoute");
 const newsRouter = require("./routes/NewsRoute");
 const Validater = require("./Helpers/Validator");
-const Budget = require("./routes/budgetToevoegen");
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
@@ -36,6 +37,7 @@ app.use(session({
     secret: process.env.COOKIE_SEC,
     resave: false,
     saveUninitialized: false,
+    store: store
 }));
 app.use(flash());
 
@@ -44,23 +46,24 @@ app.use((req,res,next) => {
     req.session.successcode = req.flash("success_code");
     next();
 })
-
 // Define Routes
 app.use("", mainRouter)
 app.use("/auth", userRouter)
 app.use("/product", productRouter)
 app.use("/news", newsRouter)
+app.use("/budget", walletRouter)
 app.use("/validate", Validater)
-app.use("/budget", Budget);
 
 
 mongoose.connect(process.env.MONGO_SEC).then(() => {
     console.log("Database is aan het luistern pssh!");
 }).catch((err) => {
     console.log(err);
+    console.log("Database is niet aan het luisteren pssh!");
 });
 
 
-app.listen(3005, () => {
-    console.log("Backend server is aan het lopen!");
+app.listen(3000, () => {
+    console.log("Backend is aan het lopen op: http://localhost:3000");
+
 })
