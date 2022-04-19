@@ -1,3 +1,4 @@
+
 const News = require("../modules/News");
 
 const router = require("express").Router();
@@ -38,5 +39,6 @@ router.get("/:id", async (req,res) => {
         return res.status(500).json(error);
     }
 })
+
 
 module.exports = router;

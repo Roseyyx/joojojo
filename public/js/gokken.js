@@ -6,6 +6,7 @@ const uitslag = {
 
 let bedrag = 0;
 
+
 // controleren of de gebruiker een gok heeft gedaan
 if(localStorage.getItem("coureur")){
   userChoice = localStorage.getItem("coureur");
@@ -14,11 +15,12 @@ if(localStorage.getItem("coureur")){
 }
 
 document.getElementById("submit").addEventListener("click", function (event) {
-  event.preventDefault();
+  // event.preventDefault();
   // sla het antwoord op
   // haal het bedrag van het account
-  bedrag = document.getElementById("bedrag").value;
-  if (bedrag > 0) {
+  userBedrag = document.getElementById("bedrag").value;
+  bedrag = userBedrag - (userBedrag * 2);
+  if (userBedrag > 0) {
     update();
     if (uitslag.bekend) {
       alert(`Je hebt ${result() ? "gewonnen" : "verloren"}!`);
@@ -76,10 +78,10 @@ async function update() {
           if(minutes < 30){
         document.getElementById("countdown").innerHTML =
           "De volgende uitslag word bekend over: " + (30 - minutes) + " minuten";
-          document.getElementById("countdown").innerHTML +=  `<br>Je hebt ${bedrag} euro ingelegd op ${userChoice}`;
+          document.getElementById("countdown").innerHTML +=  `<br>Je hebt ${bedrag - (bedrag * 2)} euro ingelegd op ${userChoice}`;
           } else {
                 document.getElementById("countdown").innerHTML = "De volgende uitslag word bekend over: " + (60 - minutes) + " minuten";
-                document.getElementById("countdown").innerHTML += `<br>Je hebt ${bedrag} euro ingelegd op ${userChoice}`;
+                document.getElementById("countdown").innerHTML += `<br>Je hebt ${bedrag - (bedrag * 2)} euro ingelegd op ${userChoice}`;
               }
           oldDate = date;
           uitslag.bekend = false;
